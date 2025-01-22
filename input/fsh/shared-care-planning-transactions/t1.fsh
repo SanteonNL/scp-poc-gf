@@ -17,6 +17,16 @@ Description: "Initiation of a task for telemonitoring"
 * insert RefIdentifierContained(owner, HealthcareService, org2-hcs1, $uuid, urn:uuid:91a9be09-eb97-4c0f-9a61-27a1985ae38b, $ura, URA-1)
 // * relevantHistory[+] = Reference(Provenance/urn:uuid:cps-task-signature-01)
 
+Instance: cps-bundle-01
+InstanceOf: Bundle
+Usage: #example
+Title: "1.03.2 Bundle"
+Description: "Bundle to initiate telemonitoring"
+* meta.versionId = "1"
+* type = #transaction
+* insert BundleEntryWithFullurl(urn:uuid:cps-task-01, cps-task-01, #POST, Task)
+
+
 Instance: cps-task-signature-01
 InstanceOf: Provenance
 Usage: #example

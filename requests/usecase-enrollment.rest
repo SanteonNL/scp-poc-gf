@@ -3,30 +3,31 @@
 ###
 # @name postBundleTask1
 
-POST {{org1-fhir-url}}
+POST {{org1-orca-url}}
 Content-Type: application/fhir+json
 Authorization: {{org1-access-token}}
 
 <@ {{path-to-data}}Bundle-cps-bundle-01.json
 
+
 ###
 # @name getTask1
 
-GET {{org1-fhir-url}}{{postBundleTask1.response.body.entry[0].response.location}}
+GET {{org1-orca-url}}{{postBundleTask1.response.body.entry[0].response.location}}
 
 ###
 @task1id = {{getTask1.response.body.id}}
 @task1etag = {{getTask1.response.body.meta.versionId}}
 ###
 
-# GET {{org1-fhir-url}}Task/13/_history/1
+# GET {{org1-orca-url}}Task/13/_history/1
 
 ###
 # @name getPatient1
 
-POST {{org1-fhir-url}}/Patient/_search
+POST {{org1-orca-url}}/Patient/_search
 Content-Type: application/x-www-form-urlencoded
-X-SCP-Context: {{org1-fhir-url}}Task/{{task1id}}
+X-SCP-Context: {{org1-orca-url}}Task/{{task1id}}
 
 identifier=http://fhir.nl/fhir/NamingSystem/bsn|{{getTask1.response.body.for.identifier.value}}
 
@@ -34,9 +35,9 @@ identifier=http://fhir.nl/fhir/NamingSystem/bsn|{{getTask1.response.body.for.ide
 ###
 # @name getServiceRequest1
 
-POST {{org1-fhir-url}}/ServiceRequest/_search
+POST {{org1-orca-url}}/ServiceRequest/_search
 Content-Type: application/x-www-form-urlencoded
-X-SCP-Context: {{org1-fhir-url}}Task/{{task1id}}
+X-SCP-Context: {{org1-orca-url}}Task/{{task1id}}
 
 identifier={{getTask1.response.body.focus.identifier.system}}|{{getTask1.response.body.focus.identifier.value}}
 
@@ -48,30 +49,30 @@ identifier={{getTask1.response.body.focus.identifier.system}}|{{getTask1.respons
 @servicerequest1id = {{getServiceRequest1.response.body.entry[0].resource.id}}
 
 ### POST Provenance (incl. signature)
-POST {{org1-fhir-url}}
+POST {{org1-orca-url}}
 Content-Type: application/fhir+json
 Authorization: {{org1-access-token}}
-X-SCP-Context: {{org1-fhir-url}}Task/{{task1id}}
+X-SCP-Context: {{org1-orca-url}}Task/{{task1id}}
 
 <@ {{path-to-data}}Bundle-cps-signature-bundle-01.json
 
 ###
 
-POST {{org1-fhir-url}}Task/_search
+POST {{org1-orca-url}}Task/_search
 Content-Type: application/x-www-form-urlencoded
-X-SCP-Context: {{org1-fhir-url}}Task/{{task1id}}
+X-SCP-Context: {{org1-orca-url}}Task/{{task1id}}
 
 _id={{task1id}}&_revinclude=Provenance:target
 
 ###
 
-GET {{org1-fhir-url}}Provenance
+GET {{org1-orca-url}}Provenance
 
 
 ###
 # @name postSubscription1
 
-POST {{org1-fhir-url}}Subscription
+POST {{org1-orca-url}}Subscription
 Content-Type: application/fhir+json
 Authorization: {{org1-access-token}}
 
@@ -83,7 +84,7 @@ Authorization: {{org1-access-token}}
 ###
 # @name postSubscription2
 
-POST {{org1-fhir-url}}Subscription
+POST {{org1-orca-url}}Subscription
 Content-Type: application/fhir+json
 Authorization: {{org1-access-token}}
 
@@ -95,7 +96,7 @@ Authorization: {{org1-access-token}}
 ###
 # @name postCareTeam1
 
-POST {{org1-fhir-url}}CareTeam
+POST {{org1-orca-url}}CareTeam
 Content-Type: application/fhir+json
 Authorization: {{org1-access-token}}
 
@@ -108,7 +109,7 @@ Authorization: {{org1-access-token}}
 ###
 # @name postCarePlan1
 
-POST {{org1-fhir-url}}CarePlan
+POST {{org1-orca-url}}CarePlan
 Content-Type: application/fhir+json
 Authorization: {{org1-access-token}}
 
@@ -120,7 +121,7 @@ Authorization: {{org1-access-token}}
 ###
 # @name postBundleTask2
 
-POST {{org1-fhir-url}}
+POST {{org1-orca-url}}
 Content-Type: application/fhir+json
 Authorization: {{org1-access-token}}
 
@@ -129,7 +130,7 @@ Authorization: {{org1-access-token}}
 ###
 # @name getTask2
 
-GET {{org1-fhir-url}}{{postBundleTask2.response.body.entry[0].response.location}}
+GET {{org1-orca-url}}{{postBundleTask2.response.body.entry[0].response.location}}
 
 ###
 @task2id = {{getTask2.response.body.id}}
@@ -139,18 +140,18 @@ GET {{org1-fhir-url}}{{postBundleTask2.response.body.entry[0].response.location}
 # ###
 # # @name getPatient1
 
-# GET {{org1-fhir-url}}{{getTask1.response.body.for.reference}}
+# GET {{org1-orca-url}}{{getTask1.response.body.for.reference}}
 
 ###
 
-POST {{org1-fhir-url}}
+POST {{org1-orca-url}}
 Content-Type: application/fhir+json
 Authorization: {{org1-access-token}}
 
 <@ {{path-to-data}}Bundle-cps-bundle-03.json
 
 ###
-POST {{org1-fhir-url}}
+POST {{org1-orca-url}}
 Content-Type: application/fhir+json
 Authorization: {{org1-access-token}}
 
@@ -158,7 +159,7 @@ Authorization: {{org1-access-token}}
 
 ###
 
-POST {{org1-fhir-url}}
+POST {{org1-orca-url}}
 Content-Type: application/fhir+json
 Authorization: {{org1-access-token}}
 

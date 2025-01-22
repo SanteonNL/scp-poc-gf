@@ -5,16 +5,17 @@
 #         "$shared": {
 #             "path-to-data": "./fsh-generated/resources/"
 #         },
-        # "poc-vws-gf": {
-        #     "org1-fhir-url": "http://fhir-org1.test.dataverloskunde.nl/fhir",
-        #     "org1-access-token": "Bearer your-token-here",
-        #     "org2-fhir-url": "http://fhir-org2-.test.dataverloskunde.nl/fhir",
-        #     "org2-access-token": "Bearer your-token-here",
-        #     "org3-fhir-url": "http://fhir-org3.test.dataverloskunde.nl/fhir",
-        #     "org3-access-token": "Bearer your-token-here",
-        #     "org4-fhir-url": "http://fhir-org4.test.dataverloskunde.nl/fhir",
-        #     "org4-access-token": "Bearer your-token-here",
-        # }
+        "poc-vws-gf": {
+            "org1-fhir-url": "http://fhir-org1.test.dataverloskunde.nl/fhir/",
+            "org1-orca-url": "http://orca-org1.test.dataverloskunde.nl/cpc/cps/fhir/",
+            "org1-access-token": "Bearer helsinki",
+            "org2-fhir-url": "http://fhir-org2.test.dataverloskunde.nl/fhir/",
+            "org2-access-token": "Bearer your-token-here",
+            "org3-fhir-url": "http://fhir-org3.test.dataverloskunde.nl/fhir/",
+            "org3-access-token": "Bearer your-token-here",
+            "org4-fhir-url": "http://fhir-org4.test.dataverloskunde.nl/fhir/",
+            "org4-access-token": "Bearer your-token-here",
+        }
 # }
 # 
 # 3) Switch between environments by clicking on the environment name in the status bar at the bottom right of the window
@@ -22,7 +23,7 @@
 
 ### POST data of services in EHR of Organization 1
 
-POST {{org1-fhir-url}}
+POST {{org1-orca-url}}
 Content-Type: application/fhir+json
 Authorization: {{org1-access-token}}
 

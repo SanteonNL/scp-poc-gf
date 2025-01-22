@@ -1,0 +1,42 @@
+###
+
+GET {{org1-orca-url}}/Patient
+Content-Type: application/fhir+json
+Authorization: {{org1-access-token}}
+
+###
+
+GET {{org1-orca-url}}/CarePlan
+Content-Type: application/fhir+json
+Authorization: {{org1-access-token}}
+
+###
+
+GET {{org1-orca-url}}/PractitionerRole
+Content-Type: application/fhir+json
+Authorization: {{org1-access-token}}
+
+###
+
+GET {{org1-orca-url}}/Practitioner
+Content-Type: application/fhir+json
+Authorization: {{org1-access-token}}
+
+###
+
+GET {{org2-fhir-url}}/Organization
+Content-Type: application/fhir+json
+Authorization: {{org1-access-token}}
+
+###
+
+GET {{org1-orca-url}}/Condition
+Content-Type: application/fhir+json
+Authorization: {{org1-access-token}}
+
+
+###
+
+GET {{org1-orca-url}}/Task
+Content-Type: application/fhir+json
+Authorization: {{org1-access-token}}
