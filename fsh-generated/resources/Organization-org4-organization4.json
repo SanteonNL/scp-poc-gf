@@ -1,0 +1,52 @@
+{
+  "resourceType": "Organization",
+  "id": "org4-organization4",
+  "meta": {
+    "profile": [
+      "http://github.com/santeonnl/scp-poc-gf/StructureDefinition/NlCoreHealthcareProviderOrganizationGF",
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.nl/fhir/NamingSystem/ura",
+      "value": "URA-4"
+    }
+  ],
+  "name": "Organization 1",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+31301234567",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "info@organization1.nl",
+      "use": "work"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "Koekoekslaan 1"
+      ],
+      "_line": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+              "valueString": "Koekoekslaan"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+              "valueString": "1"
+            }
+          ]
+        }
+      ],
+      "city": "Nieuwegein",
+      "postalCode": "3435CM"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "resourceType": "Patient",
+  "id": "org2-patrick",
+  "meta": {
+    "profile": [
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://organization2.example.org/EHR/patients",
+      "value": "abcde"
+    },
+    {
+      "system": "http://fhir.nl/fhir/NamingSystem/bsn",
+      "value": "111222333"
+    }
+  ],
+  "name": [
+    {
+      "given": [
+        "Patrick"
+      ],
+      "family": "Egger"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+31612345678"
+    },
+    {
+      "system": "email",
+      "value": "patrickegger@myweb.nl"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1984-04-01",
+  "managingOrganization": {
+    "reference": "urn:uuid:org2-organization2",
+    "display": "Organization 2"
+  }
+}

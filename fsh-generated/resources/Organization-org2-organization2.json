@@ -1,0 +1,52 @@
+{
+  "resourceType": "Organization",
+  "id": "org2-organization2",
+  "meta": {
+    "profile": [
+      "http://github.com/santeonnl/scp-poc-gf/StructureDefinition/NlCoreHealthcareProviderOrganizationGF",
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.nl/fhir/NamingSystem/ura",
+      "value": "URA-2"
+    }
+  ],
+  "name": "Organization 2",
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+31301234567",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "info@msc.nl",
+      "use": "work"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "Herculesplein 38"
+      ],
+      "_line": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+              "valueString": "Herculesplein"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+              "valueString": "38"
+            }
+          ]
+        }
+      ],
+      "city": "Utrecht",
+      "postalCode": "3584 AA"
+    }
+  ]
+}

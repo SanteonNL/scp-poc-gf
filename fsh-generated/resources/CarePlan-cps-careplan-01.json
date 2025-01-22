@@ -1,0 +1,106 @@
+{
+  "resourceType": "CarePlan",
+  "id": "cps-careplan-01",
+  "meta": {
+    "versionId": "1"
+  },
+  "contained": [
+    {
+      "resourceType": "CareTeam",
+      "id": "cps-careteam-01",
+      "participant": [
+        {
+          "period": {
+            "start": "2024-08-27"
+          },
+          "member": {
+            "reference": "{{org1-fhir-url}}Patient/{{Patient1}}",
+            "type": "Patient",
+            "identifier": {
+              "system": "http://fhir.nl/fhir/NamingSystem/bsn",
+              "value": "111222333",
+              "assigner": {
+                "identifier": {
+                  "system": "http://fhir.nl/fhir/NamingSystem/ura",
+                  "value": "URA-1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "period": {
+            "start": "2024-08-27"
+          },
+          "member": {
+            "reference": "{{org1-fhir-url}}PractitionerRole/{{PractitionerRole1}}",
+            "type": "PractitionerRole",
+            "identifier": {
+              "system": "http://fhir.nl/fhir/NamingSystem/uzi",
+              "value": "UZI-1",
+              "assigner": {
+                "identifier": {
+                  "system": "http://fhir.nl/fhir/NamingSystem/ura",
+                  "value": "URA-1"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "135411000146103",
+          "system": "http://snomed.info/sct",
+          "display": "Multidisciplinary care regime"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "{{org1-fhir-url}}Patient/{{Patient1}}",
+    "type": "Patient",
+    "identifier": {
+      "system": "http://fhir.nl/fhir/NamingSystem/bsn",
+      "value": "111222333",
+      "assigner": {
+        "identifier": {
+          "system": "http://fhir.nl/fhir/NamingSystem/ura",
+          "value": "URA-1"
+        }
+      }
+    }
+  },
+  "careTeam": [
+    {
+      "reference": "#cps-careteam-01"
+    }
+  ],
+  "author": {
+    "reference": "{{org1-fhir-url}}PractitionerRole/{{PractitionerRole1}}",
+    "type": "PractitionerRole",
+    "identifier": {
+      "system": "http://fhir.nl/fhir/NamingSystem/uzi",
+      "value": "UZI-1",
+      "assigner": {
+        "identifier": {
+          "system": "http://fhir.nl/fhir/NamingSystem/ura",
+          "value": "URA-1"
+        }
+      }
+    }
+  },
+  "activity": [
+    {
+      "reference": {
+        "reference": "{{org1-fhir-url}}Task/{{task1id}}"
+      }
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "resourceType": "Task",
+  "id": "cps-task-01-02",
+  "meta": {
+    "versionId": "2"
+  },
+  "contained": [
+    {
+      "resourceType": "ServiceRequest",
+      "id": "org1-servicerequest-telemonitoring",
+      "meta": {
+        "profile": [
+          "http://nictiz.nl/fhir/StructureDefinition/nl-core-Procedure-request"
+        ],
+        "versionId": "1",
+        "lastUpdated": "2024-09-03T12:00:00Z"
+      },
+      "identifier": [
+        {
+          "system": "urn:ietf:rfc:3986",
+          "value": "urn:uuid:37063bd0-d6bb-4fe0-b73c-26532f297d4b"
+        }
+      ],
+      "status": "active",
+      "intent": "order",
+      "subject": {
+        "reference": "urn:uuid:org1-patrick",
+        "display": "Patient Patrick Egger"
+      },
+      "requester": {
+        "reference": "urn:uuid:org1-cardiologist-carolinevandijk",
+        "display": "Caroline van Dijk at Organization 1"
+      },
+      "code": {
+        "coding": [
+          {
+            "code": "719858009",
+            "system": "http://snomed.info/sct",
+            "display": "monitoren via telegeneeskunde (regime/therapie)"
+          }
+        ]
+      },
+      "reasonReference": [
+        {
+          "reference": "urn:uuid:org1-heartfailure",
+          "display": "Diagnose Hartfalen"
+        }
+      ]
+    },
+    {
+      "resourceType": "PractitionerRole",
+      "id": "org1-cardiologist-carolinevandijk",
+      "meta": {
+        "profile": [
+          "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
+        ]
+      },
+      "identifier": [
+        {
+          "system": "http://organization1.example.org/HRM/assignments",
+          "value": "123456"
+        },
+        {
+          "system": "http://fhir.nl/fhir/NamingSystem/uzi",
+          "value": "UZI-1"
+        }
+      ],
+      "practitioner": {
+        "reference": "urn:uuid:org1-carolinevandijk"
+      },
+      "organization": {
+        "reference": "urn:uuid:org1-organization1"
+      },
+      "code": [
+        {
+          "coding": [
+            {
+              "code": "17561000",
+              "system": "http://snomed.info/sct",
+              "display": "Cardiologist"
+            }
+          ]
+        }
+      ],
+      "specialty": [
+        {
+          "coding": [
+            {
+              "code": "394579002",
+              "system": "http://snomed.info/sct",
+              "display": "Cardiology"
+            }
+          ]
+        }
+      ],
+      "telecom": [
+        {
+          "system": "email",
+          "value": "c.vandijk@organization1.nl"
+        }
+      ]
+    },
+    {
+      "resourceType": "HealthcareService",
+      "id": "org2-hcs1",
+      "active": true,
+      "providedBy": {
+        "reference": "urn:uuid:org2-organization2",
+        "identifier": {
+          "system": "http://fhir.nl/fhir/NamingSystem/ura",
+          "value": "URA-002"
+        }
+      },
+      "identifier": [
+        {
+          "system": "urn:ietf:rfc:3986",
+          "value": "urn:uuid:91a9be09-eb97-4c0f-9a61-27a1985ae38b"
+        }
+      ],
+      "category": [
+        {
+          "coding": [
+            {
+              "code": "719858009",
+              "system": "http://snomed.info/sct",
+              "display": "monitoren via telegeneeskunde (regime/therapie)"
+            }
+          ]
+        }
+      ],
+      "type": [
+        {
+          "coding": [
+            {
+              "code": "715191006",
+              "system": "http://snomed.info/sct",
+              "display": "monitoren van asthma via telegeneeskunde (regime/therapie)"
+            }
+          ]
+        },
+        {
+          "coding": [
+            {
+              "code": "879780004",
+              "system": "http://snomed.info/sct",
+              "display": "monitoren van chronisch hartfalen via telegeneeskunde (regime/therapie)"
+            }
+          ]
+        },
+        {
+          "coding": [
+            {
+              "code": "716358000",
+              "system": "http://snomed.info/sct",
+              "display": "monitoren van chronische obstructieve longziekte via telegeneeskunde (regime/therapie)"
+            }
+          ]
+        },
+        {
+          "coding": [
+            {
+              "code": "84114007",
+              "system": "http://snomed.info/sct",
+              "display": "hartfalen (aandoening)"
+            }
+          ]
+        },
+        {
+          "coding": [
+            {
+              "code": "195979001",
+              "system": "http://snomed.info/sct",
+              "display": "Asthma unspecified (disorder)"
+            }
+          ]
+        },
+        {
+          "coding": [
+            {
+              "code": "304527002",
+              "system": "http://snomed.info/sct",
+              "display": "acuut astma (aandoening)"
+            }
+          ]
+        },
+        {
+          "coding": [
+            {
+              "code": "389145006",
+              "system": "http://snomed.info/sct",
+              "display": "allergisch astma (aandoening)"
+            }
+          ]
+        },
+        {
+          "coding": [
+            {
+              "code": "13645005",
+              "system": "http://snomed.info/sct",
+              "display": "chronische obstructieve longaandoening (aandoening)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "status": "accepted",
+  "intent": "order",
+  "code": {
+    "coding": [
+      {
+        "code": "fullfill",
+        "system": "http://hl7.org/fhir/CodeSystem/task-code"
+      }
+    ]
+  },
+  "focus": {
+    "reference": "{{org1-fhir-url}}ServiceRequest/{{ServiceRequest1}}",
+    "type": "ServiceRequest",
+    "identifier": {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:uuid:37063bd0-d6bb-4fe0-b73c-26532f297d4b",
+      "assigner": {
+        "identifier": {
+          "system": "http://fhir.nl/fhir/NamingSystem/ura",
+          "value": "URA-1"
+        }
+      }
+    }
+  },
+  "reasonCode": {
+    "coding": [
+      {
+        "code": "84114007",
+        "system": "http://snomed.info/sct",
+        "display": "Hartfalen"
+      }
+    ]
+  },
+  "for": {
+    "reference": "{{org1-fhir-url}}Patient/{{Patient1}}",
+    "type": "Patient",
+    "identifier": {
+      "system": "http://fhir.nl/fhir/NamingSystem/bsn",
+      "value": "111222333",
+      "assigner": {
+        "identifier": {
+          "system": "http://fhir.nl/fhir/NamingSystem/ura",
+          "value": "URA-1"
+        }
+      }
+    }
+  },
+  "requester": {
+    "reference": "{{org1-fhir-url}}PractitionerRole/{{PractitionerRole1}}",
+    "type": "PractitionerRole",
+    "identifier": {
+      "system": "http://fhir.nl/fhir/NamingSystem/uzi",
+      "value": "UZI-1",
+      "assigner": {
+        "identifier": {
+          "system": "http://fhir.nl/fhir/NamingSystem/ura",
+          "value": "URA-1"
+        }
+      }
+    }
+  },
+  "owner": {
+    "reference": "{{org1-fhir-url}}HealthcareService/{{HealthcareService2}}",
+    "type": "HealthcareService",
+    "identifier": {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:uuid:91a9be09-eb97-4c0f-9a61-27a1985ae38b",
+      "assigner": {
+        "identifier": {
+          "system": "http://fhir.nl/fhir/NamingSystem/ura",
+          "value": "URA-1"
+        }
+      }
+    }
+  }
+}

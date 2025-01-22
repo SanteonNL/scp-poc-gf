@@ -1,0 +1,16 @@
+fhirVersion: 4.0.1
+canonical: http://github.com/santeonnl/scp-poc-gf
+
+# The dependencies property corresponds to IG.dependsOn. The key is the
+# package id and the value is the version (or dev/current). For advanced
+# use cases, the value can be an object with keys for id, uri, and version.
+dependencies:
+  nictiz.fhir.nl.r4.nl-core:
+    id: nlcore
+    uri: https://simplifier.net/packages/nictiz.fhir.nl.r4.nl-core
+    version: 0.11.0-beta.1
+  # fhir.scp:
+  #   uri: http://santeonnl.github.io/shared-care-planning 
+  #   version: 0.2.0
+
+FSHOnly: true

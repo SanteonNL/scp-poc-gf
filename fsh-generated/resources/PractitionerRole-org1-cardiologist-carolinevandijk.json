@@ -1,0 +1,53 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "org1-cardiologist-carolinevandijk",
+  "meta": {
+    "profile": [
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://organization1.example.org/HRM/assignments",
+      "value": "123456"
+    },
+    {
+      "system": "http://fhir.nl/fhir/NamingSystem/uzi",
+      "value": "UZI-1"
+    }
+  ],
+  "practitioner": {
+    "reference": "urn:uuid:org1-carolinevandijk"
+  },
+  "organization": {
+    "reference": "urn:uuid:org1-organization1"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "code": "17561000",
+          "system": "http://snomed.info/sct",
+          "display": "Cardiologist"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "code": "394579002",
+          "system": "http://snomed.info/sct",
+          "display": "Cardiology"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "email",
+      "value": "c.vandijk@organization1.nl"
+    }
+  ]
+}

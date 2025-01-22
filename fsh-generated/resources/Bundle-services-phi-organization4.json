@@ -1,0 +1,119 @@
+{
+  "resourceType": "Bundle",
+  "id": "services-phi-organization4",
+  "meta": {
+    "versionId": "1"
+  },
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:org4-organization4",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "org4-organization4",
+        "meta": {
+          "profile": [
+            "http://github.com/santeonnl/scp-poc-gf/StructureDefinition/NlCoreHealthcareProviderOrganizationGF",
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://fhir.nl/fhir/NamingSystem/ura",
+            "value": "URA-4"
+          }
+        ],
+        "name": "Organization 1",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+31301234567",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "info@organization1.nl",
+            "use": "work"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "Koekoekslaan 1"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Koekoekslaan"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "1"
+                  }
+                ]
+              }
+            ],
+            "city": "Nieuwegein",
+            "postalCode": "3435CM"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Organization"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:org4-patrick",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "org4-patrick",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "57323419-1b3a-42a1-a5d0-2e2ea538b004"
+          },
+          {
+            "system": "http://fhir.nl/fhir/NamingSystem/bsn",
+            "value": "111222333"
+          }
+        ],
+        "name": [
+          {
+            "given": [
+              "Patrick"
+            ],
+            "family": "Egger"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+31612345678"
+          },
+          {
+            "system": "email",
+            "value": "patrickegger@myweb.nl"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1984-04-01",
+        "managingOrganization": {
+          "reference": "urn:uuid:org4-organization4",
+          "display": "Organization 4"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    }
+  ]
+}

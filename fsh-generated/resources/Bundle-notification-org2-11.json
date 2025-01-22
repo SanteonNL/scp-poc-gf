@@ -1,0 +1,86 @@
+{
+  "resourceType": "Bundle",
+  "id": "notification-org2-11",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-notification-r4"
+    ]
+  },
+  "type": "history",
+  "timestamp": "2020-05-29T11:44:13.1882432-05:00",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:292d3c72-edc1-4d8a-afaa-d85e19c7f5612",
+      "resource": {
+        "resourceType": "Parameters",
+        "id": "292d3c72-edc1-4d8a-afaa-d85e19c7f5612",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-subscription-status-r4"
+          ]
+        },
+        "parameter": [
+          {
+            "name": "subscription",
+            "valueReference": {
+              "reference": "{{org1-fhir-url}}Subscription/{{subscription2id}}"
+            }
+          },
+          {
+            "name": "status",
+            "valueCode": "active"
+          },
+          {
+            "name": "type",
+            "valueCode": "event-notification"
+          },
+          {
+            "name": "notification-event",
+            "part": [
+              {
+                "name": "event-number",
+                "valueString": "4"
+              },
+              {
+                "name": "timestamp",
+                "valueInstant": "2024-05-29T11:44:13.1882432-05:00"
+              },
+              {
+                "name": "focus",
+                "valueReference": {
+                  "reference": "{{org1-fhir-url}}CarePlan/{{careplan1id}}"
+                }
+              }
+            ]
+          },
+          {
+            "name": "notification-event",
+            "part": [
+              {
+                "name": "event-number",
+                "valueString": "5"
+              },
+              {
+                "name": "timestamp",
+                "valueInstant": "2024-05-29T11:44:13.1882432-05:01"
+              },
+              {
+                "name": "focus",
+                "valueReference": {
+                  "reference": "{{org1-fhir-url}}Task/{{task1id}}"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "GET",
+        "url": "{{org1-fhir-url}}Subscription/{{subscription2id}}/$status"
+      },
+      "response": {
+        "status": "200"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "NlCoreHealthcareProviderOrganizationGF",
+  "url": "http://github.com/santeonnl/scp-poc-gf/StructureDefinition/NlCoreHealthcareProviderOrganizationGF",
+  "name": "NlCoreHealthcareProviderOrganizationGF",
+  "title": "Organization with URA identifier",
+  "status": "draft",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization.identifier",
+        "path": "Organization.identifier",
+        "min": 1
+      },
+      {
+        "id": "Organization.identifier:ura",
+        "path": "Organization.identifier",
+        "sliceName": "ura",
+        "min": 1,
+        "max": "1"
+      }
+    ]
+  }
+}

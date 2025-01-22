@@ -1,0 +1,334 @@
+{
+  "resourceType": "Bundle",
+  "id": "services-phi-organization1",
+  "meta": {
+    "versionId": "1"
+  },
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:org1-organization1",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "org1-organization1",
+        "meta": {
+          "profile": [
+            "http://github.com/santeonnl/scp-poc-gf/StructureDefinition/NlCoreHealthcareProviderOrganizationGF",
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://fhir.nl/fhir/NamingSystem/ura",
+            "value": "URA-1"
+          }
+        ],
+        "name": "Organization 1",
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+31301234567",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "info@organization1.nl",
+            "use": "work"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "Koekoekslaan 1"
+            ],
+            "_line": [
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Koekoekslaan"
+                  },
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "1"
+                  }
+                ]
+              }
+            ],
+            "city": "Nieuwegein",
+            "postalCode": "3435CM"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Organization"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:org1-cardiologist-carolinevandijk",
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "org1-cardiologist-carolinevandijk",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://organization1.example.org/HRM/assignments",
+            "value": "123456"
+          },
+          {
+            "system": "http://fhir.nl/fhir/NamingSystem/uzi",
+            "value": "UZI-1"
+          }
+        ],
+        "practitioner": {
+          "reference": "urn:uuid:org1-carolinevandijk"
+        },
+        "organization": {
+          "reference": "urn:uuid:org1-organization1"
+        },
+        "code": [
+          {
+            "coding": [
+              {
+                "code": "17561000",
+                "system": "http://snomed.info/sct",
+                "display": "Cardiologist"
+              }
+            ]
+          }
+        ],
+        "specialty": [
+          {
+            "coding": [
+              {
+                "code": "394579002",
+                "system": "http://snomed.info/sct",
+                "display": "Cardiology"
+              }
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "email",
+            "value": "c.vandijk@organization1.nl"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "PractitionerRole"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:org1-carolinevandijk",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "org1-carolinevandijk",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:uuid:21a4c9fa-98d1-43b2-8ee6-00764f99e763"
+          },
+          {
+            "system": "http://organization1.example.org/HRM/employees",
+            "value": "1234"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "text": "Caroline van Dijk",
+            "family": "van Dijk",
+            "given": [
+              "Caroline"
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+31688888888"
+          },
+          {
+            "system": "email",
+            "value": "caroline@vandijk.nl"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Practitioner"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:org1-patrick",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "org1-patrick",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://organization1.example.org/EHR/patients",
+            "value": "123456"
+          },
+          {
+            "system": "http://fhir.nl/fhir/NamingSystem/bsn",
+            "value": "111222333"
+          }
+        ],
+        "name": [
+          {
+            "given": [
+              "Patrick"
+            ],
+            "family": "Egger"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+31612345678"
+          },
+          {
+            "system": "email",
+            "value": "patrickegger@myweb.nl"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1984-04-01",
+        "managingOrganization": {
+          "reference": "urn:uuid:org1-organization1",
+          "display": "Organization 1"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:org1-copd",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "143214345325432",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-Problem"
+          ],
+          "versionId": "1",
+          "lastUpdated": "2024-09-03T12:00:00Z"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "13645005",
+              "system": "http://snomed.info/sct",
+              "display": "Chronic obstructive pulmonary disease"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:org1-patrick"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:org1-heartfailure",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "56476575765",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-Problem"
+          ],
+          "versionId": "1",
+          "lastUpdated": "2024-09-03T12:00:00Z"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "84114007",
+              "system": "http://snomed.info/sct",
+              "display": "Hartfalen"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:org1-patrick"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:org1-servicerequest-telemonitoring",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "org1-servicerequest-telemonitoring",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-Procedure-request"
+          ],
+          "versionId": "1",
+          "lastUpdated": "2024-09-03T12:00:00Z"
+        },
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:uuid:37063bd0-d6bb-4fe0-b73c-26532f297d4b"
+          }
+        ],
+        "status": "active",
+        "intent": "order",
+        "subject": {
+          "reference": "urn:uuid:org1-patrick",
+          "display": "Patient Patrick Egger"
+        },
+        "requester": {
+          "reference": "urn:uuid:org1-cardiologist-carolinevandijk",
+          "display": "Caroline van Dijk at Organization 1"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "719858009",
+              "system": "http://snomed.info/sct",
+              "display": "monitoren via telegeneeskunde (regime/therapie)"
+            }
+          ]
+        },
+        "reasonReference": [
+          {
+            "reference": "urn:uuid:org1-heartfailure",
+            "display": "Diagnose Hartfalen"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "ServiceRequest"
+      }
+    }
+  ]
+}
