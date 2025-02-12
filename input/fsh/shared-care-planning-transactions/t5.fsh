@@ -58,9 +58,9 @@ Description: "Provide information for telemonitoring"
 * intent = #order
 * code = $task-code#fullfill
 * focus = Reference(org2-telemonitoring-heartfailure-enrollment)
-* insert RefIdentifier(for, Patient, 1, $bsn, 111222333, $ura, URA-1, org1)
-* insert RefIdentifierContained(owner, PractitionerRole, org1-cardiologist-carolinevandijk, $uzi, UZI-1, $ura, URA-1)
-* insert RefIdentifierContained(requester, Organization, org2-organization2, $ura, URA-2, $ura, URA-2)
+* insert RefIdentifier(for, Patient, 1, $bsn, 111222333, $ura, 11111111, org1)
+* insert RefIdentifierContained(owner, PractitionerRole, org1-cardiologist-carolinevandijk, $uzi, UZI-1, $ura, 11111111)
+* insert RefIdentifierContained(requester, Organization, org2-organization2, $ura, 22222222, $ura, 22222222)
 * output[+].type = $task-input-type#Reference "Reference"
 * output[=].valueReference = Reference(org2-telemonitoring-heartfailure-enrollment-response)
 
@@ -86,10 +86,10 @@ Usage: #example
 * reason = $v3-ActReason#TREAT "treatment"
 * activity = $v3-DataOperation#CREATE "create"
 * agent.type = $provenance-participant-type#author
-* insert RefIdentifier(agent.who, Organization, 2, $ura, URA-2, $ura, URA-2, org2)
+* insert RefIdentifier(agent.who, Organization, 2, $ura, 22222222, $ura, 22222222, org2)
 * signature.type = urn:iso-astm:E1762-95:2013#1.2.840.10065.1.12.1.5 "Verification Signature"
 * signature.when = "2024-12-19T15:41:12+01:00"
-* insert RefIdentifier(signature.who, Organization, 1, $ura, URA-1, $ura, URA-1, org1)
+* insert RefIdentifier(signature.who, Organization, 1, $ura, 11111111, $ura, 11111111, org1)
 * signature.targetFormat = #application/fhir+json
 * signature.sigFormat = #application/jose
 // signature data created using: https://test.webpki.org/jws-ct/create

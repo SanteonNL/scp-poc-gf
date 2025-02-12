@@ -22,7 +22,7 @@
               "assigner": {
                 "identifier": {
                   "system": "http://fhir.nl/fhir/NamingSystem/ura",
-                  "value": "URA-1"
+                  "value": "11111111"
                 }
               }
             }
@@ -41,7 +41,7 @@
               "assigner": {
                 "identifier": {
                   "system": "http://fhir.nl/fhir/NamingSystem/ura",
-                  "value": "URA-1"
+                  "value": "11111111"
                 }
               }
             }
@@ -72,7 +72,7 @@
       "assigner": {
         "identifier": {
           "system": "http://fhir.nl/fhir/NamingSystem/ura",
-          "value": "URA-1"
+          "value": "11111111"
         }
       }
     }
@@ -91,7 +91,7 @@
       "assigner": {
         "identifier": {
           "system": "http://fhir.nl/fhir/NamingSystem/ura",
-          "value": "URA-1"
+          "value": "11111111"
         }
       }
     }

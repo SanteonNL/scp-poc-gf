@@ -13,7 +13,7 @@
     "extension": [
       {
         "url": "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-filter-criteria",
-        "valueString": "Task?owner.identifier=http://fhir.nl/fhir/NamingSystem/ura|URA-1,Task?requester.identifier=http://fhir.nl/fhir/NamingSystem/ura|URA-1,CareTeam?participant.member.identifier=http://fhir.nl/fhir/NamingSystem/ura|URA-1"
+        "valueString": "Task?owner.identifier=http://fhir.nl/fhir/NamingSystem/ura|11111111,Task?requester.identifier=http://fhir.nl/fhir/NamingSystem/ura|11111111,CareTeam?participant.member.identifier=http://fhir.nl/fhir/NamingSystem/ura|11111111"
       }
     ]
   },

@@ -20,7 +20,7 @@
         "identifier": [
           {
             "system": "http://fhir.nl/fhir/NamingSystem/ura",
-            "value": "URA-3"
+            "value": "33333333"
           }
         ],
         "name": "Organization 3",

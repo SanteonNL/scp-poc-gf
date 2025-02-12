@@ -8,7 +8,7 @@ Description: "Subscription to receive notifications of instance-id's where the O
 * reason = "Subscription to receive notifications of instance-id's where the Organization 2 is a participant. E.g. as a CareTeam.participant.member, Task.owner or Task.filler"
 * criteria = "https://cps.nl/fhir/SubscriptionTopic/organizationIsParticipantInInstance"
 * criteria.extension.url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-filter-criteria"
-* criteria.extension.valueString = "Task?owner.identifier=http://fhir.nl/fhir/NamingSystem/ura|URA-1,Task?requester.identifier=http://fhir.nl/fhir/NamingSystem/ura|URA-1,CareTeam?participant.member.identifier=http://fhir.nl/fhir/NamingSystem/ura|URA-1"
+* criteria.extension.valueString = "Task?owner.identifier=http://fhir.nl/fhir/NamingSystem/ura|11111111,Task?requester.identifier=http://fhir.nl/fhir/NamingSystem/ura|11111111,CareTeam?participant.member.identifier=http://fhir.nl/fhir/NamingSystem/ura|11111111"
 * channel.extension[0].url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-heartbeat-period"
 * channel.extension[=].valueUnsignedInt = 86400
 * channel.extension[+].url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-timeout"
@@ -32,7 +32,7 @@ Description: "Subscription to receive notifications of instance-id's where Organ
 * reason = "Subscription to receive notifications of instance-id's where Organization 1 is a participant. E.g. as a CareTeam.participant.member, Task.owner or Task.filler"
 * criteria = "https://cps.nl/fhir/SubscriptionTopic/organizationIsParticipantInInstance"
 * criteria.extension.url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-filter-criteria"
-* criteria.extension.valueString = "Task?owner.identifier=http://fhir.nl/fhir/NamingSystem/ura|URA-2,Task?requester.identifier=http://fhir.nl/fhir/NamingSystem/ura|URA-2,CareTeam?participant.member.identifier=http://fhir.nl/fhir/NamingSystem/ura|URA-2"
+* criteria.extension.valueString = "Task?owner.identifier=http://fhir.nl/fhir/NamingSystem/ura|22222222,Task?requester.identifier=http://fhir.nl/fhir/NamingSystem/ura|22222222,CareTeam?participant.member.identifier=http://fhir.nl/fhir/NamingSystem/ura|22222222"
 * channel.extension[0].url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-heartbeat-period"
 * channel.extension[=].valueUnsignedInt = 86400
 * channel.extension[+].url = "http://hl7.org/fhir/uv/subscriptions-backport/StructureDefinition/backport-timeout"
@@ -58,9 +58,9 @@ Description: "Initiation of a care plan for a patient with Heartfailure"
 * status = #active
 * intent = #order
 * category = $sct#135411000146103 "Multidisciplinary care regime"
-* insert RefIdentifier(subject, Patient, 1, $bsn, 111222333, $ura, URA-1, org1)
+* insert RefIdentifier(subject, Patient, 1, $bsn, 111222333, $ura, 11111111, org1)
 * careTeam = Reference(cps-careteam-01)
-* insert RefIdentifier(author, PractitionerRole, 1, $uzi, UZI-1, $ura, URA-1, org1)
+* insert RefIdentifier(author, PractitionerRole, 1, $uzi, UZI-1, $ura, 11111111, org1)
 * activity[+].reference = Reference({{org1-fhir-url}}Task/{{task1id}})
 
 
@@ -69,8 +69,8 @@ InstanceOf: CareTeam
 Usage: #inline
 Title: "1.04.4 CareTeam creation"
 Description: "Initiation of a care team for a patient with Heartfailure"
-* insert ParticipantMember(2024-08-27, Patient, 1, $bsn, 111222333, $ura, URA-1, org1)
-* insert ParticipantMember(2024-08-27, PractitionerRole, 1, $uzi, UZI-1, $ura, URA-1, org1)
+* insert ParticipantMember(2024-08-27, Patient, 1, $bsn, 111222333, $ura, 11111111, org1)
+* insert ParticipantMember(2024-08-27, PractitionerRole, 1, $uzi, UZI-1, $ura, 11111111, org1)
 
 
 Instance: notification-org1-01

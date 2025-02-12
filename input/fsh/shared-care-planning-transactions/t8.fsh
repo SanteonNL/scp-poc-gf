@@ -8,9 +8,9 @@ Description: "Add activity (Task) to CarePlan"
 * status = #active
 * intent = #order
 * category = $sct#135411000146103 "Multidisciplinary care regime"
-* insert RefIdentifier(subject, Patient, 1, $bsn, 111222333, $ura, URA-1, org1)
+* insert RefIdentifier(subject, Patient, 1, $bsn, 111222333, $ura, 11111111, org1)
 * careTeam = Reference(cps-careteam-01-02)
-* insert RefIdentifier(author, PractitionerRole, 1, $uzi, UZI-1, $ura, URA-1, org1)
+* insert RefIdentifier(author, PractitionerRole, 1, $uzi, UZI-1, $ura, 11111111, org1)
 * activity[+].reference = Reference({{org1-fhir-url}}Task/{{task1id}})
 * activity[+].reference = Reference({{org2-fhir-url}}Task/{{task2id}})
 
@@ -20,9 +20,9 @@ InstanceOf: CareTeam
 Usage: #inline
 Title: "1.43.2 CareTeam update"
 Description: "Add participant to CareTeam"
-* insert ParticipantMember(2024-08-27, Patient, 1, $bsn, 111222333, $ura, URA-1, org1)
-* insert ParticipantMember(2024-08-27, PractitionerRole, 1, $uzi, UZI-1, $ura, URA-1, org1)
-* insert ParticipantMember(2024-08-27, HealthcareService, 2, $uuid, urn:uuid:91a9be09-eb97-4c0f-9a61-27a1985ae38b, $ura, URA-2, org2)
+* insert ParticipantMember(2024-08-27, Patient, 1, $bsn, 111222333, $ura, 11111111, org1)
+* insert ParticipantMember(2024-08-27, PractitionerRole, 1, $uzi, UZI-1, $ura, 11111111, org1)
+* insert ParticipantMember(2024-08-27, HealthcareService, 2, $uuid, urn:uuid:91a9be09-eb97-4c0f-9a61-27a1985ae38b, $ura, 22222222, org2)
 
 
 Instance: cps-bundle-07
