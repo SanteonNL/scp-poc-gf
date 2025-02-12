@@ -4,7 +4,7 @@ Usage: #example
 Title: "9.01 Organization Organization 1"
 * meta.profile = "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
 // * identifier[ura].system = "http://fhir.nl/fhir/NamingSystem/ura"
-* identifier[ura].value = "URA-1"
+* identifier[ura].value = "11111111"
 * name = "Organization 1"
 * telecom[0].system = #phone
 * telecom[=].value = "+31301234567"

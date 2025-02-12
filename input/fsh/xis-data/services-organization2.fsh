@@ -5,7 +5,7 @@ Title: "9.02 Organization Organization 2"
 Description: "Existing data in EHR of Organization 2"
 * meta.profile = "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
 //* identifier.system = "http://fhir.nl/fhir/NamingSystem/ura"
-* identifier[ura].value = "URA-2"
+* identifier[ura].value = "22222222"
 * name = "Organization 2"
 * telecom[0].system = #phone
 * telecom[=].value = "+31301234567"
