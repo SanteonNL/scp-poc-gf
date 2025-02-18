@@ -28,11 +28,11 @@ Title: "9.02 HealthcareService Telemonitoring at Organization 2"
 Description: "Existing data in EHR of Organization 2"
 * active = true
 * providedBy = Reference(urn:uuid:org2-organization2)
+* providedBy.identifier.system = $ura
+* providedBy.identifier.value = "URA-002"
 * identifier.system = $uuid
 * identifier.value = "urn:uuid:91a9be09-eb97-4c0f-9a61-27a1985ae38b"
 * active = true
-* providedBy.identifier.system = $ura
-* providedBy.identifier.value = "URA-002"
 * category[+] = $sct#719858009 "monitoren via telegeneeskunde (regime/therapie)"
 * type[+] = $sct#715191006 "monitoren van asthma via telegeneeskunde (regime/therapie)"
 * type[+] = $sct#879780004 "monitoren van chronisch hartfalen via telegeneeskunde (regime/therapie)" 

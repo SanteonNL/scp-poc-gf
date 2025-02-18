@@ -26,6 +26,10 @@ Alias: $unitsofmeasure = http://unitsofmeasure.org
 
 Alias: $nl-core-Patient = http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient
 
+Alias: $consentscope = http://terminology.hl7.org/CodeSystem/consentscope
+Alias: $v3-ParticipationType = http://terminology.hl7.org/CodeSystem/v3-ParticipationType
+Alias: $consentaction = http://terminology.hl7.org/CodeSystem/consentaction
+Alias: $v3-Confidentiality = http://terminology.hl7.org/CodeSystem/v3-Confidentiality
 
 // Alias: $v3-AddressUse = http://terminology.hl7.org/CodeSystem/v3-AddressUse
 // Alias: $consentscope = http://terminology.hl7.org/CodeSystem/consentscope

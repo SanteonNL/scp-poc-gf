@@ -1,0 +1,236 @@
+{
+  "resourceType": "Consent",
+  "id": "consent-example-careplan",
+  "status": "active",
+  "scope": {
+    "coding": [
+      {
+        "code": "patient-privacy",
+        "system": "http://terminology.hl7.org/CodeSystem/consentscope"
+      }
+    ]
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "59284-0",
+          "system": "http://loinc.org"
+        }
+      ]
+    }
+  ],
+  "patient": {
+    "reference": "{{org1-fhir-url}}Patient/{{Patient1}}",
+    "type": "Patient",
+    "identifier": {
+      "system": "http://fhir.nl/fhir/NamingSystem/bsn",
+      "value": "111222333",
+      "assigner": {
+        "identifier": {
+          "system": "http://fhir.nl/fhir/NamingSystem/ura",
+          "value": "URA-1"
+        }
+      }
+    }
+  },
+  "dateTime": "2016-06-16",
+  "organization": [
+    {
+      "reference": "{{org1-fhir-url}}Organization/{{Organization1}}",
+      "type": "Organization",
+      "identifier": {
+        "system": "http://fhir.nl/fhir/NamingSystem/ura",
+        "value": "URA-1",
+        "assigner": {
+          "identifier": {
+            "system": "http://fhir.nl/fhir/NamingSystem/ura",
+            "value": "URA-1"
+          }
+        }
+      }
+    }
+  ],
+  "policyRule": {
+    "coding": [
+      {
+        "code": "OPTIN",
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+      }
+    ]
+  },
+  "provision": {
+    "actor": [
+      {
+        "role": {
+          "coding": [
+            {
+              "code": "PRCP",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"
+            }
+          ]
+        },
+        "reference": {
+          "reference": "{{org1-fhir-url}}PractitionerRole/{{PractitionerRole1}}",
+          "type": "PractitionerRole",
+          "identifier": {
+            "system": "http://fhir.nl/fhir/NamingSystem/uzi",
+            "value": "UZI-1",
+            "assigner": {
+              "identifier": {
+                "system": "http://fhir.nl/fhir/NamingSystem/ura",
+                "value": "URA-1"
+              }
+            }
+          }
+        }
+      },
+      {
+        "role": {
+          "coding": [
+            {
+              "code": "PRCP",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"
+            }
+          ]
+        },
+        "reference": {
+          "reference": "{{org1-fhir-url}}HealthcareService/{{HealthcareService2}}",
+          "type": "HealthcareService",
+          "identifier": {
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:uuid:91a9be09-eb97-4c0f-9a61-27a1985ae38b",
+            "assigner": {
+              "identifier": {
+                "system": "http://fhir.nl/fhir/NamingSystem/ura",
+                "value": "URA-1"
+              }
+            }
+          }
+        }
+      },
+      {
+        "role": {
+          "coding": [
+            {
+              "code": "PRCP",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"
+            }
+          ]
+        },
+        "reference": {
+          "reference": "{{org1-fhir-url}}Organization/{{Organization3}}",
+          "type": "Organization",
+          "identifier": {
+            "system": "http://fhir.nl/fhir/NamingSystem/ura",
+            "value": "URA-3",
+            "assigner": {
+              "identifier": {
+                "system": "http://fhir.nl/fhir/NamingSystem/ura",
+                "value": "URA-1"
+              }
+            }
+          }
+        }
+      },
+      {
+        "role": {
+          "coding": [
+            {
+              "code": "CST",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"
+            }
+          ]
+        },
+        "reference": {
+          "reference": "{{org1-fhir-url}}Organization/{{Organization1}}",
+          "type": "Organization",
+          "identifier": {
+            "system": "http://fhir.nl/fhir/NamingSystem/ura",
+            "value": "URA-1",
+            "assigner": {
+              "identifier": {
+                "system": "http://fhir.nl/fhir/NamingSystem/ura",
+                "value": "URA-1"
+              }
+            }
+          }
+        }
+      },
+      {
+        "role": {
+          "coding": [
+            {
+              "code": "CST",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"
+            }
+          ]
+        },
+        "reference": {
+          "reference": "{{org1-fhir-url}}Organization/{{Organization2}}",
+          "type": "Organization",
+          "identifier": {
+            "system": "http://fhir.nl/fhir/NamingSystem/ura",
+            "value": "URA-2",
+            "assigner": {
+              "identifier": {
+                "system": "http://fhir.nl/fhir/NamingSystem/ura",
+                "value": "URA-1"
+              }
+            }
+          }
+        }
+      },
+      {
+        "role": {
+          "coding": [
+            {
+              "code": "CST",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType"
+            }
+          ]
+        },
+        "reference": {
+          "reference": "{{org1-fhir-url}}Organization/{{Organization3}}",
+          "type": "Organization",
+          "identifier": {
+            "system": "http://fhir.nl/fhir/NamingSystem/ura",
+            "value": "URA-3",
+            "assigner": {
+              "identifier": {
+                "system": "http://fhir.nl/fhir/NamingSystem/ura",
+                "value": "URA-1"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "action": [
+      {
+        "coding": [
+          {
+            "code": "access",
+            "system": "http://terminology.hl7.org/CodeSystem/consentaction"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "code": "collect",
+            "system": "http://terminology.hl7.org/CodeSystem/consentaction"
+          }
+        ]
+      },
+      {
+        "coding": [
+          {
+            "code": "use",
+            "system": "http://terminology.hl7.org/CodeSystem/consentaction"
+          }
+        ]
+      }
+    ]
+  }
+}

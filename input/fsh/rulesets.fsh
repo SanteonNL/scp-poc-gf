@@ -71,3 +71,11 @@ RuleSet: RefIdentifierContained (resource-element, resource-type, id, identifier
 * {resource-element}.identifier.value = "{identifier-value}"
 * {resource-element}.identifier.assigner.identifier.system = {assigner-system}
 * {resource-element}.identifier.assigner.identifier.value = "{assigner-value}"
+
+RuleSet: FatReference (resource-type, instance-number, identifier-system, identifier-value, assigner-system, assigner-value, source)
+* {resource-element} = Reference({{{source}-fhir-url}}{resource-type}/{{{resource-type}{instance-number}}})
+* {resource-element}.type = "{resource-type}"
+* {resource-element}.identifier.system = {identifier-system}
+* {resource-element}.identifier.value = "{identifier-value}"
+* {resource-element}.identifier.assigner.identifier.system = {assigner-system}
+* {resource-element}.identifier.assigner.identifier.value = "{assigner-value}"

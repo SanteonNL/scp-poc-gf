@@ -1,0 +1,142 @@
+{
+  "resourceType": "Questionnaire",
+  "id": "scp-consent-questionnaire-example",
+  "meta": {
+    "tag": [
+      {
+        "code": "4.0.1",
+        "system": "http://hl7.org/fhir/FHIR-version"
+      }
+    ]
+  },
+  "language": "nl-NL",
+  "title": "Vragenlijst voor consent Shared Care Planning",
+  "url": "http://example.org/Questionnaire-SCP-consent|0.1",
+  "identifier": [
+    {
+      "system": "urn:ietf:rfc:3986",
+      "value": "urn:uuid:e6da13ea-7b75-4885-b3a0-c884f6bd3add"
+    }
+  ],
+  "status": "active",
+  "publisher": "Organization 1 B.V.",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://example.org"
+        }
+      ]
+    }
+  ],
+  "experimental": false,
+  "date": "2024-12-11",
+  "effectivePeriod": {
+    "start": "2024-12-11"
+  },
+  "useContext": [
+    {
+      "code": {
+        "code": "task",
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type"
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "59284-0",
+            "system": "http://loinc.org"
+          }
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "linkId": "9f07287f-02c1-447b-9dd7-6be4baaf31c1",
+      "text": "Volgens uw persoonlijke zorgnetwerk, zijn dit de organisatie die zorgdata hebben over u:",
+      "code": [
+        {
+          "code": "CST",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+          "display": "custodians"
+        }
+      ],
+      "type": "group",
+      "repeats": false,
+      "item": [
+        {
+          "linkId": "3902e287-992d-4c03-b4b0-d4bf19208c69",
+          "text": "Volgens uw persoonlijke zorgnetwerk, zijn dit de organisatie die zorgdata hebben over u:",
+          "code": [
+            {
+              "code": "CST",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+              "display": "custodians"
+            }
+          ],
+          "type": "open-choice",
+          "repeats": true,
+          "initial": [
+            {
+              "valueCoding": {
+                "code": "URA-1",
+                "system": "http://fhir.nl/fhir/NamingSystem/ura",
+                "display": "organization 1"
+              }
+            },
+            {
+              "valueCoding": {
+                "code": "URA-2",
+                "system": "http://fhir.nl/fhir/NamingSystem/ura",
+                "display": "organization 2"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "linkId": "0b7239f3-08bb-4fb4-8d5b-052ca5af1d10",
+      "text": "Welke partijen geeft u toestemming om deze data te gebruiken voor uw zorg?",
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/questionnaire-itemControl",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "code": "autocomplete",
+                "system": "http://hl7.org/fhir/questionnaire-item-control"
+              }
+            ]
+          }
+        }
+      ],
+      "code": [
+        {
+          "code": "PRCP",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+          "display": "participants"
+        }
+      ],
+      "type": "open-choice",
+      "repeats": true,
+      "initial": [
+        {
+          "valueCoding": {
+            "code": "255299009",
+            "system": "http://snomed.info/sct",
+            "display": "Instabiel"
+          }
+        },
+        {
+          "valueCoding": {
+            "code": "58158008",
+            "system": "http://snomed.info/sct",
+            "display": "Stabiel"
+          }
+        }
+      ]
+    }
+  ]
+}
