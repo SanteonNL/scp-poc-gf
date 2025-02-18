@@ -23,9 +23,10 @@ Install Firely Terminal:
 ```
 dotnet tool install -g firely.terminal
 ```
-Install nl-core profiles to create the required snapshots:
+Install nl-core profiles to create the required snapshots (more info: https://fshschool.org/docs/sushi/running/#structure-definition-is-missing-snapshot-error):
 ```
 fhir install nictiz.fhir.nl.r4.nl-core 0.11.0-beta.1
+fhir inflate --package nictiz.fhir.nl.r4.nl-core
 ```
 
 Now you should be able to use command 'sushi' in the root folder of this repository (cloned to your local environment) to generate new FHIR JSON files
