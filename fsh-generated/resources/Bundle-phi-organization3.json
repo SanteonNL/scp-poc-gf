@@ -107,6 +107,76 @@
         "method": "PUT",
         "url": "MedicationStatement/org3-ms1"
       }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "org3-cp1",
+        "contained": [
+          {
+            "resourceType": "CareTeam",
+            "id": "org3-ct1",
+            "participant": [
+              {
+                "period": {
+                  "start": "2024-08-27"
+                },
+                "member": {
+                  "reference": "Patient/org3-jaantje"
+                }
+              },
+              {
+                "period": {
+                  "start": "2024-08-27"
+                },
+                "member": {
+                  "reference": "PractitionerRole/org3-practitionerrole1"
+                }
+              },
+              {
+                "period": {
+                  "start": "2024-08-27"
+                },
+                "member": {
+                  "reference": "Organization/org3-organization1",
+                  "identifier": {
+                    "system": "http://fhir.nl/fhir/NamingSystem/ura",
+                    "value": "33333333"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "status": "active",
+        "intent": "order",
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "135411000146103",
+                "system": "http://snomed.info/sct",
+                "display": "Multidisciplinary care regime"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/org3-jaantje"
+        },
+        "careTeam": [
+          {
+            "reference": "#org3-ct1"
+          }
+        ],
+        "author": {
+          "reference": "PractitionerRole/org3-practitionerrole1"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "CarePlan/org3-cp1"
+      }
     }
   ]
 }

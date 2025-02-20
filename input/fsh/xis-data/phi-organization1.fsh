@@ -150,10 +150,10 @@ Description: "Add participant to CareTeam"
 * participant[=].member = Reference(https://fhir-org2.test.dataverloskunde.nl/fhir/Organization/org2-organization1)
 * participant[=].member.identifier.system = "http://fhir.nl/fhir/NamingSystem/ura"
 * participant[=].member.identifier.value = "22222222"
-* participant[+].period.start = "2024-08-27"
-* participant[=].member = Reference(https://fhir-org3.test.dataverloskunde.nl/fhir/Organization/org3-organization1)
-* participant[=].member.identifier.system = "http://fhir.nl/fhir/NamingSystem/ura"
-* participant[=].member.identifier.value = "33333333"
+// * participant[+].period.start = "2024-08-27"
+// * participant[=].member = Reference(https://fhir-org3.test.dataverloskunde.nl/fhir/Organization/org3-organization1)
+// * participant[=].member.identifier.system = "http://fhir.nl/fhir/NamingSystem/ura"
+// * participant[=].member.identifier.value = "33333333"
 
 
 

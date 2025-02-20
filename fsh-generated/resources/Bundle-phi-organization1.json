@@ -446,18 +446,6 @@
                     "value": "22222222"
                   }
                 }
-              },
-              {
-                "period": {
-                  "start": "2024-08-27"
-                },
-                "member": {
-                  "reference": "https://fhir-org3.test.dataverloskunde.nl/fhir/Organization/org3-organization1",
-                  "identifier": {
-                    "system": "http://fhir.nl/fhir/NamingSystem/ura",
-                    "value": "33333333"
-                  }
-                }
               }
             ]
           }
