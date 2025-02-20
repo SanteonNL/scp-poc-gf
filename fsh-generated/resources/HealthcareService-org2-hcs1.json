@@ -3,99 +3,33 @@
   "id": "org2-hcs1",
   "active": true,
   "providedBy": {
-    "reference": "urn:uuid:org2-organization2",
-    "identifier": {
-      "system": "http://fhir.nl/fhir/NamingSystem/ura",
-      "value": "URA-002"
-    }
+    "reference": "Organization/org2-organization1"
   },
-  "identifier": [
-    {
-      "system": "urn:ietf:rfc:3986",
-      "value": "urn:uuid:91a9be09-eb97-4c0f-9a61-27a1985ae38b"
-    }
-  ],
-  "category": [
+  "specialty": [
     {
       "coding": [
         {
-          "code": "719858009",
-          "system": "http://snomed.info/sct",
-          "display": "monitoren via telegeneeskunde (regime/therapie)"
-        }
-      ]
-    }
-  ],
-  "type": [
-    {
-      "coding": [
-        {
-          "code": "715191006",
-          "system": "http://snomed.info/sct",
-          "display": "monitoren van asthma via telegeneeskunde (regime/therapie)"
+          "code": "0303",
+          "system": "urn:oid:2.16.840.1.113883.2.4.6.7",
+          "display": "Chirurgie (Heelkunde)"
         }
       ]
     },
     {
       "coding": [
         {
-          "code": "879780004",
+          "code": "408463005",
           "system": "http://snomed.info/sct",
-          "display": "monitoren van chronisch hartfalen via telegeneeskunde (regime/therapie)"
+          "display": "Vascular surgery"
         }
       ]
     },
     {
       "coding": [
         {
-          "code": "716358000",
+          "code": "722414000",
           "system": "http://snomed.info/sct",
-          "display": "monitoren van chronische obstructieve longziekte via telegeneeskunde (regime/therapie)"
-        }
-      ]
-    },
-    {
-      "coding": [
-        {
-          "code": "84114007",
-          "system": "http://snomed.info/sct",
-          "display": "hartfalen (aandoening)"
-        }
-      ]
-    },
-    {
-      "coding": [
-        {
-          "code": "195979001",
-          "system": "http://snomed.info/sct",
-          "display": "Asthma unspecified (disorder)"
-        }
-      ]
-    },
-    {
-      "coding": [
-        {
-          "code": "304527002",
-          "system": "http://snomed.info/sct",
-          "display": "acuut astma (aandoening)"
-        }
-      ]
-    },
-    {
-      "coding": [
-        {
-          "code": "389145006",
-          "system": "http://snomed.info/sct",
-          "display": "allergisch astma (aandoening)"
-        }
-      ]
-    },
-    {
-      "coding": [
-        {
-          "code": "13645005",
-          "system": "http://snomed.info/sct",
-          "display": "chronische obstructieve longaandoening (aandoening)"
+          "display": "Vascular medicine"
         }
       ]
     }

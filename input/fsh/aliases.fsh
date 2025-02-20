@@ -1,5 +1,6 @@
 Alias: $sct = http://snomed.info/sct
 Alias: $loinc = http://loinc.org
+Alias: $atc = http://www.whocc.no/atc
 Alias: $task-status = http://hl7.org/fhir/task-status
 Alias: $task-intent = http://hl7.org/fhir/request-intent
 Alias: $task-code = http://hl7.org/fhir/CodeSystem/task-code
@@ -21,11 +22,17 @@ Alias: $questionnaire-item-control = http://hl7.org/fhir/questionnaire-item-cont
 Alias: $uuid = urn:ietf:rfc:3986
 Alias: $provenance-participant-type = http://terminology.hl7.org/CodeSystem/provenance-participant-type
 Alias: $unitsofmeasure = http://unitsofmeasure.org
+Alias: $service-type = http://terminology.hl7.org/CodeSystem/service-type
 // Alias: $orpha = http://www.orpha.net
-// Alias: $atc = http://www.whocc.no/atc
+Alias: $agb-specialismen = urn:oid:2.16.840.1.113883.2.4.6.7
+
+Alias: $endpoint1 = https://fhir-org1.test.dataverloskunde.nl/fhir
+Alias: $endpoint2 = https://fhir-org2.test.dataverloskunde.nl/fhir
+Alias: $endpoint3 = https://fhir-org3.test.dataverloskunde.nl/fhir
+Alias: $endpoint4 = https://fhir-org4.test.dataverloskunde.nl/fhir
 
 Alias: $nl-core-Patient = http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient
-
+Alias: $organization-type = http://nictiz.nl/fhir/NamingSystem/organization-type
 Alias: $consentscope = http://terminology.hl7.org/CodeSystem/consentscope
 Alias: $v3-ParticipationType = http://terminology.hl7.org/CodeSystem/v3-ParticipationType
 Alias: $consentaction = http://terminology.hl7.org/CodeSystem/consentaction

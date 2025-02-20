@@ -1,0 +1,34 @@
+{
+  "resourceType": "Practitioner",
+  "id": "org3-practitioner1",
+  "active": true,
+  "name": [
+    {
+      "family": "Doe",
+      "given": [
+        "John"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+31301234568",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "john.doe@organization3.nl",
+      "use": "work"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "Smidsstraat 11"
+      ],
+      "city": "Zelhem",
+      "postalCode": "7021 AC"
+    }
+  ]
+}

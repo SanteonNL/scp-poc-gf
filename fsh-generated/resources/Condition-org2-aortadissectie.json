@@ -1,0 +1,22 @@
+{
+  "resourceType": "Condition",
+  "id": "org2-aortadissectie",
+  "meta": {
+    "profile": [
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-Problem"
+    ]
+  },
+  "onsetDateTime": "2017-09-03T12:00:00Z",
+  "code": {
+    "coding": [
+      {
+        "code": "308546005",
+        "system": "http://snomed.info/sct",
+        "display": "aortadissectie"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/org2-jaantje"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "resourceType": "Practitioner",
+  "id": "org1-harryarts",
+  "meta": {
+    "profile": [
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://organization1.example.org/HRM/employees",
+      "value": "5678"
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "text": "Hary Arts",
+      "family": "Arts",
+      "given": [
+        "Harry"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,496 @@
+{
+  "resourceType": "Bundle",
+  "id": "phi-organization1",
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "org1-jaantje",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://organization1.example.org/EHR/patients",
+            "value": "123456"
+          },
+          {
+            "system": "http://fhir.nl/fhir/NamingSystem/bsn",
+            "value": "111222333"
+          }
+        ],
+        "name": [
+          {
+            "given": [
+              "Jaantje"
+            ],
+            "family": "Merkens"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+31612345678"
+          },
+          {
+            "system": "email",
+            "value": "j.merkens@bigtech.com"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1950-02-26",
+        "address": [
+          {
+            "line": [
+              "Kerkstraat 18"
+            ],
+            "postalCode": "7071 WZ",
+            "city": "Ulft"
+          }
+        ],
+        "managingOrganization": {
+          "reference": "Organization/org1-organization1",
+          "display": "Organization 1"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/org1-jaantje"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "org1-general-weakness",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-Condition"
+          ],
+          "versionId": "1",
+          "lastUpdated": "2024-09-03T12:00:00Z"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "code": "active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "code": "provisional"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "13791008",
+              "system": "http://snomed.info/sct",
+              "display": "krachtsvermindering"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "code": "421480009",
+                "system": "http://snomed.info/sct",
+                "display": "been of beide benen"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/org1-jaantje",
+          "display": "Patient Jaantje Merkens"
+        },
+        "onsetDateTime": "2021-08-01T00:00:00Z",
+        "recorder": {
+          "reference": "PractitionerRole/org1-generalpractitioner-harryarts",
+          "display": "Caroline van Dijk at Organization 1"
+        },
+        "note": [
+          {
+            "text": "Patient reports general weakness and loss of energy in legs."
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Condition/org1-general-weakness"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "org1-vascular-medicine",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-Procedure-request"
+          ],
+          "versionId": "1"
+        },
+        "status": "active",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/org1-jaantje",
+          "display": "Patient Jaantje Merkens"
+        },
+        "requester": {
+          "reference": "PractitionerRole/org1-generalpractitioner-harryarts",
+          "display": "Caroline van Dijk at Organization 1"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "105251000146109",
+              "system": "http://snomed.info/sct",
+              "display": "eerste polikliniekbezoek"
+            }
+          ]
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/org1-general-weakness",
+            "display": "General Weakness"
+          }
+        ],
+        "performerType": {
+          "coding": [
+            {
+              "code": "722414000",
+              "system": "http://snomed.info/sct",
+              "display": "Vascular medicine"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "ServiceRequest/org1-vascular-medicine"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "org1-neurology",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-Procedure-request"
+          ],
+          "versionId": "1"
+        },
+        "status": "active",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/org1-jaantje",
+          "display": "Patient Jaantje Merkens"
+        },
+        "requester": {
+          "reference": "PractitionerRole/org1-generalpractitioner-harryarts",
+          "display": "Caroline van Dijk at Organization 1"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "105251000146109",
+              "system": "http://snomed.info/sct",
+              "display": "eerste polikliniekbezoek"
+            }
+          ]
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/org1-general-weakness",
+            "display": "General Weakness"
+          }
+        ],
+        "performerType": {
+          "coding": [
+            {
+              "code": "394591006",
+              "system": "http://snomed.info/sct",
+              "display": "Neurology"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "ServiceRequest/org1-neurology"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "org1-orthopedic-specialty",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-Procedure-request"
+          ],
+          "versionId": "1"
+        },
+        "status": "active",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/org1-jaantje",
+          "display": "Patient Jaantje Merkens"
+        },
+        "requester": {
+          "reference": "PractitionerRole/org1-generalpractitioner-harryarts",
+          "display": "Caroline van Dijk at Organization 1"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "105251000146109",
+              "system": "http://snomed.info/sct",
+              "display": "eerste polikliniekbezoek"
+            }
+          ]
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/org1-general-weakness",
+            "display": "General Weakness"
+          }
+        ],
+        "performerType": {
+          "coding": [
+            {
+              "code": "1345026002",
+              "system": "http://snomed.info/sct",
+              "display": "Orthopedic specialty"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "ServiceRequest/org1-orthopedic-specialty"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "id": "org1-internal-medicine",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-Procedure-request"
+          ],
+          "versionId": "1"
+        },
+        "status": "active",
+        "intent": "order",
+        "subject": {
+          "reference": "Patient/org1-jaantje",
+          "display": "Patient Jaantje Merkens"
+        },
+        "requester": {
+          "reference": "PractitionerRole/org1-generalpractitioner-harryarts",
+          "display": "Caroline van Dijk at Organization 1"
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "105251000146109",
+              "system": "http://snomed.info/sct",
+              "display": "eerste polikliniekbezoek"
+            }
+          ]
+        },
+        "reasonReference": [
+          {
+            "reference": "Condition/org1-general-weakness",
+            "display": "General Weakness"
+          }
+        ],
+        "performerType": {
+          "coding": [
+            {
+              "code": "419192003",
+              "system": "http://snomed.info/sct",
+              "display": "Internal medicine"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "ServiceRequest/org1-internal-medicine"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "org1-ms1",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-MedicationStatement"
+          ]
+        },
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "code": "B01AD04",
+              "system": "http://www.whocc.no/atc",
+              "display": "Urokinase (trombolytica)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/org1-jaantje"
+        },
+        "effectiveDateTime": "2017-09-03",
+        "dateAsserted": "2017-09-03",
+        "informationSource": {
+          "reference": "PractitionerRole/org1-generalpractitioner-harryarts"
+        },
+        "dosage": [
+          {
+            "text": "Take one tablet by mouth twice daily",
+            "timing": {
+              "repeat": {
+                "frequency": 2,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 500,
+                  "unit": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationStatement/org1-ms1"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "CarePlan",
+        "id": "org1-cp1",
+        "meta": {
+          "versionId": "2"
+        },
+        "contained": [
+          {
+            "resourceType": "CareTeam",
+            "id": "cps-careteam-01-02",
+            "participant": [
+              {
+                "period": {
+                  "start": "2024-08-27"
+                },
+                "member": {
+                  "reference": "Patient/org1-jaantje"
+                }
+              },
+              {
+                "period": {
+                  "start": "2024-08-27"
+                },
+                "member": {
+                  "reference": "PractitionerRole/org1-generalpractitioner-harryarts"
+                }
+              },
+              {
+                "period": {
+                  "start": "2024-08-27"
+                },
+                "member": {
+                  "reference": "https://fhir-org2.test.dataverloskunde.nl/fhir/PractitionerRole/org2-cardiologist-carolinevandijk"
+                }
+              },
+              {
+                "period": {
+                  "start": "2024-08-27"
+                },
+                "member": {
+                  "reference": "https://fhir-org3.test.dataverloskunde.nl/fhir/PractitionerRole/org3-practitionerrole1"
+                }
+              },
+              {
+                "period": {
+                  "start": "2024-08-27"
+                },
+                "member": {
+                  "reference": "Organization/org1-organization1",
+                  "identifier": {
+                    "system": "http://fhir.nl/fhir/NamingSystem/ura",
+                    "value": "11111111"
+                  }
+                }
+              },
+              {
+                "period": {
+                  "start": "2024-08-27"
+                },
+                "member": {
+                  "reference": "https://fhir-org2.test.dataverloskunde.nl/fhir/Organization/org2-organization1",
+                  "identifier": {
+                    "system": "http://fhir.nl/fhir/NamingSystem/ura",
+                    "value": "22222222"
+                  }
+                }
+              },
+              {
+                "period": {
+                  "start": "2024-08-27"
+                },
+                "member": {
+                  "reference": "https://fhir-org3.test.dataverloskunde.nl/fhir/Organization/org3-organization1",
+                  "identifier": {
+                    "system": "http://fhir.nl/fhir/NamingSystem/ura",
+                    "value": "33333333"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "status": "active",
+        "intent": "order",
+        "category": [
+          {
+            "coding": [
+              {
+                "code": "135411000146103",
+                "system": "http://snomed.info/sct",
+                "display": "Multidisciplinary care regime"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/org1-jaantje"
+        },
+        "careTeam": [
+          {
+            "reference": "#cps-careteam-01-02"
+          }
+        ],
+        "author": {
+          "reference": "PractitionerRole/org1-generalpractitioner-harryarts"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "CarePlan/org1-cp1"
+      }
+    }
+  ]
+}

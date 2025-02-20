@@ -1,0 +1,52 @@
+{
+  "resourceType": "Patient",
+  "id": "org4-jaantje",
+  "meta": {
+    "profile": [
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://organization4.example.org/EHR/patients",
+      "value": "126fvdsezv"
+    },
+    {
+      "system": "http://fhir.nl/fhir/NamingSystem/bsn",
+      "value": "111222333"
+    }
+  ],
+  "name": [
+    {
+      "given": [
+        "Jaantje"
+      ],
+      "family": "Merkens"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+31612345678"
+    },
+    {
+      "system": "email",
+      "value": "j.merkens@bigtech.com"
+    }
+  ],
+  "gender": "female",
+  "birthDate": "1950-02-26",
+  "address": [
+    {
+      "line": [
+        "Kerkstraat 18"
+      ],
+      "postalCode": "7071 WZ",
+      "city": "Ulft"
+    }
+  ],
+  "managingOrganization": {
+    "reference": "Organization/org4-organization1",
+    "display": "Organization 1"
+  }
+}

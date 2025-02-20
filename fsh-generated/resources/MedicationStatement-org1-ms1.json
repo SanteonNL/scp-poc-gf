@@ -1,0 +1,47 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "org1-ms1",
+  "meta": {
+    "profile": [
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-MedicationStatement"
+    ]
+  },
+  "status": "active",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "B01AD04",
+        "system": "http://www.whocc.no/atc",
+        "display": "Urokinase (trombolytica)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/org1-jaantje"
+  },
+  "effectiveDateTime": "2017-09-03",
+  "dateAsserted": "2017-09-03",
+  "informationSource": {
+    "reference": "PractitionerRole/org1-generalpractitioner-harryarts"
+  },
+  "dosage": [
+    {
+      "text": "Take one tablet by mouth twice daily",
+      "timing": {
+        "repeat": {
+          "frequency": 2,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 500,
+            "unit": "mg"
+          }
+        }
+      ]
+    }
+  ]
+}

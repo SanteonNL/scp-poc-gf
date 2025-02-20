@@ -1,0 +1,41 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "org3-ms1",
+  "status": "active",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "L04AA32",
+        "system": "http://www.whocc.no/atc",
+        "display": "Apremilast (immunosuppressiva)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/org3-jaantje"
+  },
+  "dateAsserted": "2024-10-03",
+  "informationSource": {
+    "reference": "PractitionerRole/org3-practitionerrole1"
+  },
+  "dosage": [
+    {
+      "text": "10 mg orally every 4 hours",
+      "timing": {
+        "repeat": {
+          "frequency": 6,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 10,
+            "unit": "mg"
+          }
+        }
+      ]
+    }
+  ]
+}

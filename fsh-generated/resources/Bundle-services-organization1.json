@@ -1,0 +1,242 @@
+{
+  "resourceType": "Bundle",
+  "id": "services-organization1",
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "org1-organization1",
+        "meta": {
+          "profile": [
+            "http://github.com/santeonnl/scp-poc-gf/StructureDefinition/NlCoreHealthcareProviderOrganizationGF",
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://fhir.nl/fhir/NamingSystem/ura",
+            "value": "11111111"
+          }
+        ],
+        "name": "example General Practice",
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "Z3",
+                "system": "http://nictiz.nl/fhir/NamingSystem/organization-type",
+                "display": "Huisartspraktijk (zelfstandig of groepspraktijk)"
+              }
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+3131599991",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "info@examplegp.nl",
+            "use": "work"
+          }
+        ],
+        "address": [
+          {
+            "line": [
+              "Vogelenzangweg 31",
+              null,
+              null
+            ],
+            "_line": [
+              null,
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+                    "valueString": "Vogelenzangweg"
+                  }
+                ]
+              },
+              {
+                "extension": [
+                  {
+                    "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+                    "valueString": "31"
+                  }
+                ]
+              }
+            ],
+            "city": "Ulft",
+            "postalCode": "7071 PT"
+          }
+        ],
+        "endpoint": [
+          {
+            "reference": "Endpoint/org1-endpoint"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Organization/org1-organization1"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Endpoint",
+        "id": "org1-endpoint",
+        "status": "active",
+        "payloadType": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/endpoint-payload-type",
+                "code": "Any"
+              }
+            ]
+          }
+        ],
+        "payloadMimeType": [
+          "application/fhir+json"
+        ],
+        "connectionType": {
+          "system": "http://terminology.hl7.org/CodeSystem/endpoint-connection-type",
+          "code": "hl7-fhir-rest"
+        },
+        "name": "Example GP FHIR Endpoint",
+        "contact": [
+          {
+            "system": "phone",
+            "value": "+3131599991",
+            "use": "work"
+          },
+          {
+            "system": "email",
+            "value": "info@example.com",
+            "use": "work"
+          }
+        ],
+        "address": "https://fhir-org1.test.dataverloskunde.nl/fhir"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Endpoint/org1-endpoint"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "org1-generalpractitioner-harryarts",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://organization1.example.org/HRM/assignments",
+            "value": "654321"
+          },
+          {
+            "system": "http://fhir.nl/fhir/NamingSystem/uzi",
+            "value": "UZI-2"
+          }
+        ],
+        "practitioner": {
+          "reference": "Practitioner/org1-harryarts"
+        },
+        "organization": {
+          "reference": "Organization/org1-organization1"
+        },
+        "code": [
+          {
+            "coding": [
+              {
+                "code": "158965000",
+                "system": "http://snomed.info/sct",
+                "display": "General Practitioner"
+              }
+            ]
+          }
+        ],
+        "specialty": [
+          {
+            "coding": [
+              {
+                "code": "394814009",
+                "system": "http://snomed.info/sct",
+                "display": "General practice"
+              }
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "email",
+            "value": "h.arts@organization1.nl"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "PractitionerRole/org1-generalpractitioner-harryarts"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "org1-harryarts",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://organization1.example.org/HRM/employees",
+            "value": "5678"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "text": "Hary Arts",
+            "family": "Arts",
+            "given": [
+              "Harry"
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Practitioner/org1-harryarts"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "SearchParameter",
+        "id": "careplan-subject-identifier",
+        "url": "http://santeonnl.github.io/shared-care-planning/cps-searchparameter-careplan-subject-identifier.json",
+        "name": "subject-identifier",
+        "status": "active",
+        "description": "Search CarePlans by subject identifier",
+        "code": "subject-identifier",
+        "base": [
+          "CarePlan"
+        ],
+        "type": "token",
+        "expression": "CarePlan.subject.identifier",
+        "xpathUsage": "normal",
+        "xpath": "f:CarePlan/f:subject/f:identifier"
+      },
+      "request": {
+        "method": "PUT",
+        "url": "SearchParameter/careplan-subject-identifier"
+      }
+    }
+  ]
+}

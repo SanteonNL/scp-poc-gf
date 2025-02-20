@@ -1,0 +1,35 @@
+{
+  "resourceType": "Practitioner",
+  "id": "org2-carolinevandijk",
+  "meta": {
+    "profile": [
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-Practitioner"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://organization1.example.org/HRM/employees",
+      "value": "1234"
+    }
+  ],
+  "name": [
+    {
+      "use": "official",
+      "text": "Caroline van Dijk",
+      "family": "van Dijk",
+      "given": [
+        "Caroline"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+31688888888"
+    },
+    {
+      "system": "email",
+      "value": "caroline@vandijk.nl"
+    }
+  ]
+}

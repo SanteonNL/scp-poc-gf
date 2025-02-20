@@ -1,0 +1,59 @@
+{
+  "resourceType": "Condition",
+  "id": "org1-general-weakness",
+  "meta": {
+    "profile": [
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-Condition"
+    ],
+    "versionId": "1",
+    "lastUpdated": "2024-09-03T12:00:00Z"
+  },
+  "clinicalStatus": {
+    "coding": [
+      {
+        "code": "active"
+      }
+    ]
+  },
+  "verificationStatus": {
+    "coding": [
+      {
+        "code": "provisional"
+      }
+    ]
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "13791008",
+        "system": "http://snomed.info/sct",
+        "display": "krachtsvermindering"
+      }
+    ]
+  },
+  "bodySite": [
+    {
+      "coding": [
+        {
+          "code": "421480009",
+          "system": "http://snomed.info/sct",
+          "display": "been of beide benen"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "Patient/org1-jaantje",
+    "display": "Patient Jaantje Merkens"
+  },
+  "onsetDateTime": "2021-08-01T00:00:00Z",
+  "recorder": {
+    "reference": "PractitionerRole/org1-generalpractitioner-harryarts",
+    "display": "Caroline van Dijk at Organization 1"
+  },
+  "note": [
+    {
+      "text": "Patient reports general weakness and loss of energy in legs."
+    }
+  ]
+}

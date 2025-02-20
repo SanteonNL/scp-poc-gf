@@ -1,0 +1,37 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "org2-report-neurology",
+  "status": "final",
+  "basedOn": [
+    {
+      "reference": "https://fhir-org1.test.dataverloskunde.nl/fhir/ServiceRequest/org1-neurology"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "10241000146105",
+        "system": "http://snomed.info/sct",
+        "display": "verslag van neurologische beoordeling"
+      }
+    ],
+    "text": "Negative result, no abnormalities detected"
+  },
+  "subject": {
+    "reference": "Patient/org2-jaantje"
+  },
+  "effectiveDateTime": "2025-02-19T10:00:00Z",
+  "issued": "2025-02-19T10:05:00Z",
+  "conclusionCode": [
+    {
+      "coding": [
+        {
+          "code": "281900007",
+          "system": "http://snomed.info/sct",
+          "display": "geen afwijkingen gevonden"
+        }
+      ]
+    }
+  ],
+  "conclusion": "No significant findings. The test is negative."
+}

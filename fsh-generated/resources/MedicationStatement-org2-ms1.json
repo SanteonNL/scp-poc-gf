@@ -1,0 +1,47 @@
+{
+  "resourceType": "MedicationStatement",
+  "id": "org2-ms1",
+  "meta": {
+    "profile": [
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-MedicationStatement"
+    ]
+  },
+  "status": "active",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "L01BC05",
+        "system": "http://www.whocc.no/atc",
+        "display": "Cisplatine (pyrimidine-antagonisten)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/org2-jaantje"
+  },
+  "effectiveDateTime": "2017-09-03",
+  "dateAsserted": "2017-09-03",
+  "informationSource": {
+    "reference": "PractitionerRole/org2-cardiologist-carolinevandijk"
+  },
+  "dosage": [
+    {
+      "text": "Take one tablet by mouth twice daily",
+      "timing": {
+        "repeat": {
+          "frequency": 2,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 250,
+            "unit": "mg"
+          }
+        }
+      ]
+    }
+  ]
+}

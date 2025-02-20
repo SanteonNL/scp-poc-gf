@@ -1,0 +1,22 @@
+{
+  "resourceType": "Condition",
+  "id": "org2-hypercalciemie",
+  "meta": {
+    "profile": [
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-Problem"
+    ]
+  },
+  "onsetDateTime": "2021-09-03T12:00:00Z",
+  "code": {
+    "coding": [
+      {
+        "code": "66931009",
+        "system": "http://snomed.info/sct",
+        "display": "hypercalciëmie"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/org2-jaantje"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "resourceType": "HealthcareService",
+  "id": "org2-hcs6",
+  "active": true,
+  "providedBy": {
+    "reference": "Organization/org2-organization1"
+  },
+  "specialty": [
+    {
+      "coding": [
+        {
+          "code": "0306",
+          "system": "urn:oid:2.16.840.1.113883.2.4.6.7",
+          "display": "Medisch specialisten, urologie"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "code": "394612005",
+          "system": "http://snomed.info/sct",
+          "display": "Urology"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "code": "419043006",
+          "system": "http://snomed.info/sct",
+          "display": "Urological oncology"
+        }
+      ]
+    }
+  ]
+}

@@ -10,43 +10,66 @@
   "identifier": [
     {
       "system": "http://fhir.nl/fhir/NamingSystem/ura",
-      "value": "URA-1"
+      "value": "11111111"
     }
   ],
-  "name": "Organization 1",
+  "name": "example General Practice",
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "Z3",
+          "system": "http://nictiz.nl/fhir/NamingSystem/organization-type",
+          "display": "Huisartspraktijk (zelfstandig of groepspraktijk)"
+        }
+      ]
+    }
+  ],
   "telecom": [
     {
       "system": "phone",
-      "value": "+31301234567",
+      "value": "+3131599991",
       "use": "work"
     },
     {
       "system": "email",
-      "value": "info@organization1.nl",
+      "value": "info@examplegp.nl",
       "use": "work"
     }
   ],
   "address": [
     {
       "line": [
-        "Koekoekslaan 1"
+        "Vogelenzangweg 31",
+        null,
+        null
       ],
       "_line": [
+        null,
         {
           "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
-              "valueString": "Koekoekslaan"
-            },
+              "valueString": "Vogelenzangweg"
+            }
+          ]
+        },
+        {
+          "extension": [
             {
               "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
-              "valueString": "1"
+              "valueString": "31"
             }
           ]
         }
       ],
-      "city": "Nieuwegein",
-      "postalCode": "3435CM"
+      "city": "Ulft",
+      "postalCode": "7071 PT"
+    }
+  ],
+  "endpoint": [
+    {
+      "reference": "Endpoint/org1-endpoint"
     }
   ]
 }

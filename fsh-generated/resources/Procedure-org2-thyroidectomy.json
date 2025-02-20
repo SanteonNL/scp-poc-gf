@@ -1,0 +1,35 @@
+{
+  "resourceType": "Procedure",
+  "id": "org2-thyroidectomy",
+  "meta": {
+    "profile": [
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-Procedure"
+    ]
+  },
+  "status": "completed",
+  "code": {
+    "coding": [
+      {
+        "code": "13619001",
+        "system": "http://snomed.info/sct",
+        "display": "Thyroidectomy"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/org2-jaantje"
+  },
+  "performedDateTime": "2022-05-15T08:00:00Z",
+  "performer": [
+    {
+      "actor": {
+        "reference": "PractitionerRole/org2-cardiologist-carolinevandijk"
+      }
+    }
+  ],
+  "reasonReference": [
+    {
+      "reference": "Condition/org2-hypercalciemie"
+    }
+  ]
+}

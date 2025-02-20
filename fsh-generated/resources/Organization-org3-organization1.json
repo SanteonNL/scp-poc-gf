@@ -1,0 +1,68 @@
+{
+  "resourceType": "Organization",
+  "id": "org3-organization1",
+  "meta": {
+    "profile": [
+      "http://github.com/santeonnl/scp-poc-gf/StructureDefinition/NlCoreHealthcareProviderOrganizationGF",
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.nl/fhir/NamingSystem/ura",
+      "value": "33333333"
+    }
+  ],
+  "name": "Organization 3",
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "X3",
+          "system": "http://nictiz.nl/fhir/NamingSystem/organization-type",
+          "display": "Verplegings- of verzorgingsinstelling"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+31301234567",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "info@organization3.nl",
+      "use": "work"
+    }
+  ],
+  "address": [
+    {
+      "line": [
+        "Smidsstraat 10"
+      ],
+      "_line": [
+        {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+              "valueString": "Smidsstraat"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+              "valueString": "10"
+            }
+          ]
+        }
+      ],
+      "city": "Zelhem",
+      "postalCode": "7021 AC"
+    }
+  ],
+  "endpoint": [
+    {
+      "reference": "Endpoint/org3-endpoint"
+    }
+  ]
+}

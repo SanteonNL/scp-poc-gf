@@ -1,0 +1,43 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "org3-practitionerrole1",
+  "practitioner": {
+    "reference": "Practitioner/org3-practitioner1"
+  },
+  "organization": {
+    "reference": "Organization/org3-organization1"
+  },
+  "active": true,
+  "specialty": [
+    {
+      "coding": [
+        {
+          "code": "0335",
+          "system": "urn:oid:2.16.840.1.113883.2.4.6.7",
+          "display": "Medisch specialisten, geriatrie"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "code": "394811001",
+          "system": "http://snomed.info/sct",
+          "display": "Geriatric medicine"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "+31301234568",
+      "use": "work"
+    },
+    {
+      "system": "email",
+      "value": "john.doe@organization3.nl",
+      "use": "work"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "resourceType": "HealthcareService",
+  "id": "org2-hcs2",
+  "active": true,
+  "providedBy": {
+    "reference": "Organization/org2-organization1"
+  },
+  "specialty": [
+    {
+      "coding": [
+        {
+          "code": "0308",
+          "system": "urn:oid:2.16.840.1.113883.2.4.6.7",
+          "display": "Medisch specialisten, neurochirurgie"
+        }
+      ]
+    },
+    {
+      "coding": [
+        {
+          "code": "394591006",
+          "system": "http://snomed.info/sct",
+          "display": "Neurology"
+        }
+      ]
+    }
+  ]
+}

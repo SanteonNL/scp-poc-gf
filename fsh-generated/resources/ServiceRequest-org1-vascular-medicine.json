@@ -1,0 +1,44 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "org1-vascular-medicine",
+  "meta": {
+    "profile": [
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-Procedure-request"
+    ],
+    "versionId": "1"
+  },
+  "status": "active",
+  "intent": "order",
+  "subject": {
+    "reference": "Patient/org1-jaantje",
+    "display": "Patient Jaantje Merkens"
+  },
+  "requester": {
+    "reference": "PractitionerRole/org1-generalpractitioner-harryarts",
+    "display": "Caroline van Dijk at Organization 1"
+  },
+  "code": {
+    "coding": [
+      {
+        "code": "105251000146109",
+        "system": "http://snomed.info/sct",
+        "display": "eerste polikliniekbezoek"
+      }
+    ]
+  },
+  "reasonReference": [
+    {
+      "reference": "Condition/org1-general-weakness",
+      "display": "General Weakness"
+    }
+  ],
+  "performerType": {
+    "coding": [
+      {
+        "code": "722414000",
+        "system": "http://snomed.info/sct",
+        "display": "Vascular medicine"
+      }
+    ]
+  }
+}

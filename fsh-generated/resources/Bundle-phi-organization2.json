@@ -1,0 +1,440 @@
+{
+  "resourceType": "Bundle",
+  "id": "phi-organization2",
+  "type": "transaction",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "org2-jaantje",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-Patient"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "http://organization2.example.org/EHR/patients",
+            "value": "vdfesz"
+          },
+          {
+            "system": "http://fhir.nl/fhir/NamingSystem/bsn",
+            "value": "111222333"
+          }
+        ],
+        "name": [
+          {
+            "given": [
+              "Jaantje"
+            ],
+            "family": "Merkens"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "+31612345678"
+          },
+          {
+            "system": "email",
+            "value": "j.merkens@bigtech.com"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1950-02-26",
+        "address": [
+          {
+            "line": [
+              "Kerkstraat 18"
+            ],
+            "postalCode": "7071 WZ",
+            "city": "Ulft"
+          }
+        ],
+        "managingOrganization": {
+          "reference": "Organization/org2-organization1",
+          "display": "Organization 2"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Patient/org2-jaantje"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "org2-aortadissectie",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-Problem"
+          ]
+        },
+        "onsetDateTime": "2017-09-03T12:00:00Z",
+        "code": {
+          "coding": [
+            {
+              "code": "308546005",
+              "system": "http://snomed.info/sct",
+              "display": "aortadissectie"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/org2-jaantje"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Condition/org2-aortadissectie"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "org2-hypercalciemie",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-Problem"
+          ]
+        },
+        "onsetDateTime": "2021-09-03T12:00:00Z",
+        "code": {
+          "coding": [
+            {
+              "code": "66931009",
+              "system": "http://snomed.info/sct",
+              "display": "hypercalciëmie"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/org2-jaantje"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Condition/org2-hypercalciemie"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "org2-thyroidectomy",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-Procedure"
+          ]
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "code": "13619001",
+              "system": "http://snomed.info/sct",
+              "display": "Thyroidectomy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/org2-jaantje"
+        },
+        "performedDateTime": "2022-05-15T08:00:00Z",
+        "performer": [
+          {
+            "actor": {
+              "reference": "PractitionerRole/org2-cardiologist-carolinevandijk"
+            }
+          }
+        ],
+        "reasonReference": [
+          {
+            "reference": "Condition/org2-hypercalciemie"
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "Procedure/org2-thyroidectomy"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "org2-methyldopa",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-MedicationRequest"
+          ]
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "code": "L01BC05",
+              "system": "http://www.whocc.no/atc",
+              "display": "Cisplatine (pyrimidine-antagonisten)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/org2-jaantje"
+        },
+        "authoredOn": "2017-09-03",
+        "requester": {
+          "reference": "PractitionerRole/org2-cardiologist-carolinevandijk"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Take one tablet by mouth twice daily",
+            "timing": {
+              "repeat": {
+                "frequency": 2,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 250,
+                  "unit": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationRequest/org2-methyldopa"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "org2-report-vascular-medicine",
+        "status": "final",
+        "basedOn": [
+          {
+            "reference": "https://fhir-org1.test.dataverloskunde.nl/fhir/ServiceRequest/org1-vascular-medicine"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "371530004",
+              "system": "http://snomed.info/sct",
+              "display": " klinisch consultverslag"
+            }
+          ],
+          "text": "Negative result, no abnormalities detected"
+        },
+        "subject": {
+          "reference": "Patient/org2-jaantje"
+        },
+        "effectiveDateTime": "2025-02-19T10:00:00Z",
+        "issued": "2025-02-19T10:05:00Z",
+        "conclusionCode": [
+          {
+            "coding": [
+              {
+                "code": "281900007",
+                "system": "http://snomed.info/sct",
+                "display": "geen afwijkingen gevonden"
+              }
+            ]
+          }
+        ],
+        "conclusion": "No significant findings. The test is negative."
+      },
+      "request": {
+        "method": "PUT",
+        "url": "DiagnosticReport/org2-report-vascular-medicine"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "org2-report-neurology",
+        "status": "final",
+        "basedOn": [
+          {
+            "reference": "https://fhir-org1.test.dataverloskunde.nl/fhir/ServiceRequest/org1-neurology"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "10241000146105",
+              "system": "http://snomed.info/sct",
+              "display": "verslag van neurologische beoordeling"
+            }
+          ],
+          "text": "Negative result, no abnormalities detected"
+        },
+        "subject": {
+          "reference": "Patient/org2-jaantje"
+        },
+        "effectiveDateTime": "2025-02-19T10:00:00Z",
+        "issued": "2025-02-19T10:05:00Z",
+        "conclusionCode": [
+          {
+            "coding": [
+              {
+                "code": "281900007",
+                "system": "http://snomed.info/sct",
+                "display": "geen afwijkingen gevonden"
+              }
+            ]
+          }
+        ],
+        "conclusion": "No significant findings. The test is negative."
+      },
+      "request": {
+        "method": "PUT",
+        "url": "DiagnosticReport/org2-report-neurology"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "org2-report-orthopedic-specialty",
+        "status": "final",
+        "basedOn": [
+          {
+            "reference": "https://fhir-org1.test.dataverloskunde.nl/fhir/ServiceRequest/org1-orthopedic-specialty"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "10301000146102",
+              "system": "http://snomed.info/sct",
+              "display": "hematologieverslag"
+            }
+          ],
+          "text": "Negative result, no abnormalities detected"
+        },
+        "subject": {
+          "reference": "Patient/org2-jaantje"
+        },
+        "effectiveDateTime": "2025-02-19T10:00:00Z",
+        "issued": "2025-02-19T10:05:00Z",
+        "conclusionCode": [
+          {
+            "coding": [
+              {
+                "code": "281900007",
+                "system": "http://snomed.info/sct",
+                "display": "geen afwijkingen gevonden"
+              }
+            ]
+          }
+        ],
+        "conclusion": "No significant findings. The test is negative."
+      },
+      "request": {
+        "method": "PUT",
+        "url": "DiagnosticReport/org2-report-orthopedic-specialty"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "DiagnosticReport",
+        "id": "org2-report-internal-medicine",
+        "status": "final",
+        "basedOn": [
+          {
+            "reference": "https://fhir-org1.test.dataverloskunde.nl/fhir/ServiceRequest/org1-internal-medicine"
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "code": "10301000146102",
+              "system": "http://snomed.info/sct",
+              "display": "hematologieverslag"
+            }
+          ],
+          "text": "Negative result, no abnormalities detected"
+        },
+        "subject": {
+          "reference": "Patient/org2-jaantje"
+        },
+        "effectiveDateTime": "2025-02-19T10:00:00Z",
+        "issued": "2025-02-19T10:05:00Z",
+        "conclusionCode": [
+          {
+            "coding": [
+              {
+                "code": "281900007",
+                "system": "http://snomed.info/sct",
+                "display": "geen afwijkingen gevonden"
+              }
+            ]
+          }
+        ],
+        "conclusion": "No significant findings. The test is negative."
+      },
+      "request": {
+        "method": "PUT",
+        "url": "DiagnosticReport/org2-report-internal-medicine"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "org2-ms1",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-MedicationStatement"
+          ]
+        },
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "code": "L01BC05",
+              "system": "http://www.whocc.no/atc",
+              "display": "Cisplatine (pyrimidine-antagonisten)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/org2-jaantje"
+        },
+        "effectiveDateTime": "2017-09-03",
+        "dateAsserted": "2017-09-03",
+        "informationSource": {
+          "reference": "PractitionerRole/org2-cardiologist-carolinevandijk"
+        },
+        "dosage": [
+          {
+            "text": "Take one tablet by mouth twice daily",
+            "timing": {
+              "repeat": {
+                "frequency": 2,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 250,
+                  "unit": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationStatement/org2-ms1"
+      }
+    }
+  ]
+}

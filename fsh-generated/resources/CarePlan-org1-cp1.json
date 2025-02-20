@@ -1,0 +1,107 @@
+{
+  "resourceType": "CarePlan",
+  "id": "org1-cp1",
+  "meta": {
+    "versionId": "2"
+  },
+  "contained": [
+    {
+      "resourceType": "CareTeam",
+      "id": "cps-careteam-01-02",
+      "participant": [
+        {
+          "period": {
+            "start": "2024-08-27"
+          },
+          "member": {
+            "reference": "Patient/org1-jaantje"
+          }
+        },
+        {
+          "period": {
+            "start": "2024-08-27"
+          },
+          "member": {
+            "reference": "PractitionerRole/org1-generalpractitioner-harryarts"
+          }
+        },
+        {
+          "period": {
+            "start": "2024-08-27"
+          },
+          "member": {
+            "reference": "https://fhir-org2.test.dataverloskunde.nl/fhir/PractitionerRole/org2-cardiologist-carolinevandijk"
+          }
+        },
+        {
+          "period": {
+            "start": "2024-08-27"
+          },
+          "member": {
+            "reference": "https://fhir-org3.test.dataverloskunde.nl/fhir/PractitionerRole/org3-practitionerrole1"
+          }
+        },
+        {
+          "period": {
+            "start": "2024-08-27"
+          },
+          "member": {
+            "reference": "Organization/org1-organization1",
+            "identifier": {
+              "system": "http://fhir.nl/fhir/NamingSystem/ura",
+              "value": "11111111"
+            }
+          }
+        },
+        {
+          "period": {
+            "start": "2024-08-27"
+          },
+          "member": {
+            "reference": "https://fhir-org2.test.dataverloskunde.nl/fhir/Organization/org2-organization1",
+            "identifier": {
+              "system": "http://fhir.nl/fhir/NamingSystem/ura",
+              "value": "22222222"
+            }
+          }
+        },
+        {
+          "period": {
+            "start": "2024-08-27"
+          },
+          "member": {
+            "reference": "https://fhir-org3.test.dataverloskunde.nl/fhir/Organization/org3-organization1",
+            "identifier": {
+              "system": "http://fhir.nl/fhir/NamingSystem/ura",
+              "value": "33333333"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "status": "active",
+  "intent": "order",
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "135411000146103",
+          "system": "http://snomed.info/sct",
+          "display": "Multidisciplinary care regime"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "Patient/org1-jaantje"
+  },
+  "careTeam": [
+    {
+      "reference": "#cps-careteam-01-02"
+    }
+  ],
+  "author": {
+    "reference": "PractitionerRole/org1-generalpractitioner-harryarts"
+  }
+}

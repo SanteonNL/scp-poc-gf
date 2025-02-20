@@ -1,0 +1,47 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "org2-methyldopa",
+  "meta": {
+    "profile": [
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-MedicationRequest"
+    ]
+  },
+  "status": "active",
+  "intent": "order",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "code": "L01BC05",
+        "system": "http://www.whocc.no/atc",
+        "display": "Cisplatine (pyrimidine-antagonisten)"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/org2-jaantje"
+  },
+  "authoredOn": "2017-09-03",
+  "requester": {
+    "reference": "PractitionerRole/org2-cardiologist-carolinevandijk"
+  },
+  "dosageInstruction": [
+    {
+      "text": "Take one tablet by mouth twice daily",
+      "timing": {
+        "repeat": {
+          "frequency": 2,
+          "period": 1,
+          "periodUnit": "d"
+        }
+      },
+      "doseAndRate": [
+        {
+          "doseQuantity": {
+            "value": 250,
+            "unit": "mg"
+          }
+        }
+      ]
+    }
+  ]
+}

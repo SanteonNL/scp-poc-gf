@@ -1,0 +1,53 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "org1-generalpractitioner-harryarts",
+  "meta": {
+    "profile": [
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthProfessional-PractitionerRole"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://organization1.example.org/HRM/assignments",
+      "value": "654321"
+    },
+    {
+      "system": "http://fhir.nl/fhir/NamingSystem/uzi",
+      "value": "UZI-2"
+    }
+  ],
+  "practitioner": {
+    "reference": "Practitioner/org1-harryarts"
+  },
+  "organization": {
+    "reference": "Organization/org1-organization1"
+  },
+  "code": [
+    {
+      "coding": [
+        {
+          "code": "158965000",
+          "system": "http://snomed.info/sct",
+          "display": "General Practitioner"
+        }
+      ]
+    }
+  ],
+  "specialty": [
+    {
+      "coding": [
+        {
+          "code": "394814009",
+          "system": "http://snomed.info/sct",
+          "display": "General practice"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "email",
+      "value": "h.arts@organization1.nl"
+    }
+  ]
+}
