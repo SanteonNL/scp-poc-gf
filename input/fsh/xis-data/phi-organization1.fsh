@@ -150,11 +150,37 @@ Description: "Add participant to CareTeam"
 * participant[=].member = Reference(https://fhir-org2.test.dataverloskunde.nl/fhir/Organization/org2-organization1)
 * participant[=].member.identifier.system = "http://fhir.nl/fhir/NamingSystem/ura"
 * participant[=].member.identifier.value = "22222222"
-// * participant[+].period.start = "2024-08-27"
-// * participant[=].member = Reference(https://fhir-org3.test.dataverloskunde.nl/fhir/Organization/org3-organization1)
-// * participant[=].member.identifier.system = "http://fhir.nl/fhir/NamingSystem/ura"
-// * participant[=].member.identifier.value = "33333333"
 
+Instance: org1-cp2
+InstanceOf: CarePlan
+Usage: #example
+Title: "1.43.1 CarePlan update"
+Description: "Add activity (Task) to CarePlan"
+* meta.versionId = "2"
+* contained[0] = cps-careteam-02-02
+* status = #active
+* intent = #order
+* category = $sct#135411000146103 "Multidisciplinary care regime"
+* subject = Reference(Patient/org1-jaantje)
+* careTeam = Reference(cps-careteam-02-02)
+* author = Reference(PractitionerRole/org1-generalpractitioner-harryarts)
+// * activity[+].reference = Reference({{org1-fhir-url}}Task/{{task1id}})
+// * activity[+].reference = Reference({{org2-fhir-url}}Task/{{task2id}})
+
+
+Instance: cps-careteam-02-02
+InstanceOf: CareTeam
+Usage: #inline
+Title: "1.43.2 CareTeam update"
+Description: "Add participant to CareTeam"
+* participant[+].period.start = "2024-08-27"
+* participant[=].member = Reference(Patient/org1-jaantje)
+* participant[+].period.start = "2024-08-27"
+* participant[=].member = Reference(PractitionerRole/org1-generalpractitioner-harryarts)
+* participant[+].period.start = "2024-08-27"
+* participant[=].member = Reference(https://fhir-org2.test.dataverloskunde.nl/fhir/PractitionerRole/org2-cardiologist-carolinevandijk)
+* participant[+].period.start = "2024-08-27"
+* participant[=].member = Reference(https://fhir-org3.test.dataverloskunde.nl/fhir/PractitionerRole/org3-practitionerrole1)
 
 
 Instance: phi-organization1
@@ -170,3 +196,4 @@ Title: "9.01 Bundle of services and personal health information in EHR of Organi
 * insert BundleEntry(org1-internal-medicine, #PUT, ServiceRequest/org1-internal-medicine)
 * insert BundleEntry(org1-ms1, #PUT, MedicationStatement/org1-ms1)
 * insert BundleEntry(org1-cp1, #PUT, CarePlan/org1-cp1)
+* insert BundleEntry(org1-cp2, #PUT, CarePlan/org1-cp2)

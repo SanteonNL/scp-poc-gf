@@ -5,7 +5,7 @@
     "reference": "Practitioner/org3-practitioner1"
   },
   "organization": {
-    "reference": "Organization/org3-organization1"
+    "reference": "Organization/org3-department1"
   },
   "active": true,
   "specialty": [

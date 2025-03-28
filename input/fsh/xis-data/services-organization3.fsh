@@ -23,6 +23,15 @@ Description: "Existing data in EHR of Organization 2"
 * address.postalCode = "7021 AC"
 * endpoint[+] = Reference(Endpoint/org3-endpoint)
 
+Instance: org3-department1
+InstanceOf: NlCoreHealthcareProviderOrganizationGF
+Usage: #example
+Title: "Org 3, Afdeling geriatrie"
+Description: "Org 3, Afdeling geriatrie"
+* meta.profile = "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
+* name = "Afdeling geriatrie"
+* partOf = Reference(Organization/org3-organization1)
+
 Instance: org3-endpoint
 InstanceOf: Endpoint
 Usage: #example
@@ -72,7 +81,7 @@ Instance: org3-practitionerrole1
 InstanceOf: PractitionerRole
 Usage: #example
 * practitioner = Reference(Practitioner/org3-practitioner1)
-* organization = Reference(Organization/org3-organization1)
+* organization = Reference(Organization/org3-department1)
 * active = true
 * specialty[+].coding = $agb-specialismen#0335 "Medisch specialisten, geriatrie"
 * specialty[+].coding = $sct#394811001 "Geriatric medicine"
@@ -89,6 +98,7 @@ Usage: #example
 Title: "9.01 Bundle of services and personal health information in EHR of Organization 2"
 * type = #transaction
 * insert BundleEntry(org3-organization1, #PUT, Organization/org3-organization1)
+* insert BundleEntry(org3-department1, #PUT, Organization/org3-department1)
 * insert BundleEntry(org3-endpoint, #PUT, Endpoint/org3-endpoint)
 * insert BundleEntry(org3-hcs1, #PUT, HealthcareService/org3-hcs1)
 * insert BundleEntry(org3-practitioner1, #PUT, Practitioner/org3-practitioner1)
