@@ -137,6 +137,7 @@ InstanceOf: Procedure
 Usage: #example
 Title: "Procedure Thyroidectomy"
 * meta.profile = "http://nictiz.nl/fhir/StructureDefinition/nl-core-Procedure"
+* meta.tag[0] = $v3-ActCode#MH
 * status = #completed
 * code = $sct#13619001 "Thyroidectomy"
 * subject = Reference(Patient/org2-jaantje) 

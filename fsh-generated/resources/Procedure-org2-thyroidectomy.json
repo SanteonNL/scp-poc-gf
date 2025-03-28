@@ -4,6 +4,12 @@
   "meta": {
     "profile": [
       "http://nictiz.nl/fhir/StructureDefinition/nl-core-Procedure"
+    ],
+    "tag": [
+      {
+        "code": "MH",
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+      }
     ]
   },
   "status": "completed",
