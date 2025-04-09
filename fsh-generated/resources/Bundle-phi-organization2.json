@@ -124,6 +124,12 @@
         "meta": {
           "profile": [
             "http://nictiz.nl/fhir/StructureDefinition/nl-core-Procedure"
+          ],
+          "tag": [
+            {
+              "code": "MH",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+            }
           ]
         },
         "status": "completed",
@@ -209,6 +215,65 @@
       "request": {
         "method": "PUT",
         "url": "MedicationRequest/org2-methyldopa"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "org2-fluoxetine",
+        "meta": {
+          "profile": [
+            "http://nictiz.nl/fhir/StructureDefinition/nl-core-Procedure"
+          ],
+          "tag": [
+            {
+              "code": "MH",
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode"
+            }
+          ]
+        },
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "code": "N06AB03",
+              "system": "http://www.whocc.no/atc",
+              "display": "Fluoxetine  (Selective serotonin reuptake inhibitors)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/org2-jaantje"
+        },
+        "authoredOn": "2023-11-04",
+        "requester": {
+          "reference": "PractitionerRole/org2-cardiologist-carolinevandijk"
+        },
+        "dosageInstruction": [
+          {
+            "text": "Take one tablet by mouth twice daily",
+            "timing": {
+              "repeat": {
+                "frequency": 2,
+                "period": 1,
+                "periodUnit": "d"
+              }
+            },
+            "doseAndRate": [
+              {
+                "doseQuantity": {
+                  "value": 250,
+                  "unit": "mg"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicationRequest/org2-fluoxetine"
       }
     },
     {

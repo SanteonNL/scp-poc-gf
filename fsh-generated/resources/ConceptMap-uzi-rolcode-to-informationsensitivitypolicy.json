@@ -1,0 +1,81 @@
+{
+  "resourceType": "ConceptMap",
+  "id": "uzi-rolcode-to-informationsensitivitypolicy",
+  "url": "http://example.org/fhir/ConceptMap/uzi-rolcode-to-informationsensitivitypolicy",
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:bb1bc368-6dad-47ed-9101-898573affbf7"
+  },
+  "name": "PractitionerRole code (UZI rolcode) to Information Sensitivity Policy for Authorization",
+  "status": "draft",
+  "experimental": true,
+  "description": "PractitionerRole code (UZI rolcode) to Information Sensitivity Policy for Authorization",
+  "purpose": "Authorization of practitioners to access sensitive information",
+  "sourceCanonical": "http://decor.nictiz.nl/fhir/ValueSet/2.16.840.1.113883.2.4.3.11.60.1.11.2--20200401000000",
+  "targetCanonical": "http://terminology.hl7.org/ValueSet/v3-InformationSensitivityPolicy",
+  "group": [
+    {
+      "source": "http://fhir.nl/fhir/NamingSystem/uzi-rolcode",
+      "target": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+      "element": [
+        {
+          "code": "01.045",
+          "display": "Uroloog",
+          "target": [
+            {
+              "code": "ETH",
+              "display": "substance abuse information sensitivity",
+              "equivalence": "specializes"
+            },
+            {
+              "code": "GDIS",
+              "display": "genetic disease information sensitivity",
+              "equivalence": "specializes"
+            },
+            {
+              "code": "SDV",
+              "display": "sexual assault, abuse, or domestic violence information sensitivity",
+              "equivalence": "specializes"
+            },
+            {
+              "code": "SEX",
+              "display": "sexuality and reproductive health information sensitivity",
+              "equivalence": "specializes"
+            },
+            {
+              "code": "STD",
+              "display": "sexually transmitted disease information sensitivity",
+              "equivalence": "specializes"
+            }
+          ]
+        },
+        {
+          "code": "30.076",
+          "display": "Verpl. spec. algemene gezondheidszorg",
+          "target": [
+            {
+              "code": "ETH",
+              "display": "substance abuse information sensitivity",
+              "equivalence": "specializes"
+            },
+            {
+              "code": "SDV",
+              "display": "sexual assault, abuse, or domestic violence information sensitivity",
+              "equivalence": "specializes"
+            },
+            {
+              "code": "BH",
+              "display": "behavioral health information sensitivity",
+              "equivalence": "specializes"
+            },
+            {
+              "code": "MH",
+              "display": "mental health information sensitivity",
+              "equivalence": "specializes"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "resourceType": "Organization",
+  "id": "org3-department1",
+  "meta": {
+    "profile": [
+      "http://github.com/santeonnl/scp-poc-gf/StructureDefinition/NlCoreHealthcareProviderOrganizationGF",
+      "http://nictiz.nl/fhir/StructureDefinition/nl-core-HealthcareProvider-Organization"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "http://fhir.nl/fhir/NamingSystem/ura"
+    }
+  ],
+  "name": "Afdeling geriatrie",
+  "partOf": {
+    "reference": "Organization/org3-organization1"
+  }
+}

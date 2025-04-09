@@ -23,7 +23,7 @@ DELETE {{org1-fhir-url}}MedicationStatement/org1-paracetamol-statement
 
 ###
 
-GET {{org1-orca-url}}/CarePlan
+GET {{org1-fhir-url}}/CarePlan/org1-cp1#cps-careteam-01-02/
 Content-Type: application/fhir+json
 Authorization: {{org1-access-token}}
 
@@ -57,3 +57,26 @@ Authorization: {{org1-access-token}}
 GET {{org1-orca-url}}/Task
 Content-Type: application/fhir+json
 Authorization: {{org1-access-token}}
+
+###
+GET {{mcsd-url}}fhir/Organization
+Authorization: {{mcsd-access-token}}
+
+###
+GET {{mcsd-url}}fhir/PractitionerRole
+Authorization: {{mcsd-access-token}}
+
+###
+GET {{org1-fhir-url}}Organization
+Content-Type: application/fhir+json
+Authorization: {{org1-access-token}}
+
+###
+GET {{org2-fhir-url}}Organization
+Content-Type: application/fhir+json
+Authorization: {{org2-access-token}}
+
+###
+GET {{org3-fhir-url}}Organization
+Content-Type: application/fhir+json
+Authorization: {{org3-access-token}}

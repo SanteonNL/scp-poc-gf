@@ -126,3 +126,35 @@ Authorization: {{org4-access-token}}
 #     }
 #   ]
 # }
+
+### 
+
+POST {{org1-fhir-url}}
+Content-Type: application/fhir+json
+Authorization: {{org1-access-token}}
+
+<@ {{path-to-data}}Bundle-terminology.json
+
+### 
+
+POST {{org2-fhir-url}}
+Content-Type: application/fhir+json
+Authorization: {{org2-access-token}}
+
+<@ {{path-to-data}}Bundle-terminology.json
+
+### 
+
+POST {{org3-fhir-url}}
+Content-Type: application/fhir+json
+Authorization: {{org3-access-token}}
+
+<@ {{path-to-data}}Bundle-terminology.json
+
+### 
+
+POST {{org4-fhir-url}}
+Content-Type: application/fhir+json
+Authorization: {{org4-access-token}}
+
+<@ {{path-to-data}}Bundle-terminology.json
