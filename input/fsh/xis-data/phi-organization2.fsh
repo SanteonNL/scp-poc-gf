@@ -50,6 +50,30 @@ Title: "MedicationRequest Cisplatine"
 * dosageInstruction[0].doseAndRate[0].doseQuantity.value = 250
 * dosageInstruction[0].doseAndRate[0].doseQuantity.unit = "mg"
 
+
+
+
+//Start antihypertensiva bij cardioloog
+Instance: org2-fluoxetine
+InstanceOf: MedicationRequest
+Usage: #example
+Title: "MedicationRequest Fluoxetine"
+* meta.profile = "http://nictiz.nl/fhir/StructureDefinition/nl-core-MedicationRequest"
+* meta.profile = "http://nictiz.nl/fhir/StructureDefinition/nl-core-Procedure"
+* meta.tag[0] = $v3-ActCode#MH
+* status = #active
+* intent = #order
+* medicationCodeableConcept = $atc#N06AB03 "Fluoxetine  (Selective serotonin reuptake inhibitors)"
+* subject = Reference(Patient/org2-jaantje) 
+* authoredOn = "2023-11-04"
+* requester = Reference(PractitionerRole/org2-cardiologist-carolinevandijk) // Organization 2
+* dosageInstruction[0].text = "Take one tablet by mouth twice daily"
+* dosageInstruction[0].timing.repeat.frequency = 2
+* dosageInstruction[0].timing.repeat.period = 1
+* dosageInstruction[0].timing.repeat.periodUnit = #d
+* dosageInstruction[0].doseAndRate[0].doseQuantity.value = 250
+* dosageInstruction[0].doseAndRate[0].doseQuantity.unit = "mg"
+
 Instance: org2-ms1
 InstanceOf: MedicationStatement
 Usage: #example
@@ -155,6 +179,7 @@ Title: "9.01 Bundle of services and personal health information in EHR of Organi
 * insert BundleEntry(org2-hypercalciemie, #PUT, Condition/org2-hypercalciemie)
 * insert BundleEntry(org2-thyroidectomy, #PUT, Procedure/org2-thyroidectomy)
 * insert BundleEntry(org2-methyldopa, #PUT, MedicationRequest/org2-methyldopa)
+* insert BundleEntry(org2-fluoxetine, #PUT, MedicationRequest/org2-fluoxetine)
 * insert BundleEntry(org2-report-vascular-medicine, #PUT, DiagnosticReport/org2-report-vascular-medicine)
 * insert BundleEntry(org2-report-neurology, #PUT, DiagnosticReport/org2-report-neurology)
 * insert BundleEntry(org2-report-orthopedic-specialty, #PUT, DiagnosticReport/org2-report-orthopedic-specialty)
